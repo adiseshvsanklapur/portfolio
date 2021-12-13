@@ -60,7 +60,7 @@ function About() {
           <Box direction="row" background="black" align="center" pad="small">
             <Box
               margin={{ right: "50px" }}
-              className="hover"
+              className="specialhover"
               pad="small"
               align="center"
             >
@@ -69,7 +69,7 @@ function About() {
             </Box>
             <Box
               margin={{ right: "50px" }}
-              className="hover"
+              className="specialhover"
               pad="small"
               align="center"
             >
@@ -78,7 +78,7 @@ function About() {
             </Box>
             <Box
               margin={{ right: "50px" }}
-              className="hover"
+              className="specialhover"
               pad="small"
               align="center"
             >
@@ -87,7 +87,7 @@ function About() {
             </Box>
             <Box
               margin={{ right: "50px" }}
-              className="hover"
+              className="specialhover"
               pad="small"
               align="center"
             >
@@ -96,7 +96,7 @@ function About() {
             </Box>
             <Box
               margin={{ right: "50px" }}
-              className="hover"
+              className="specialhover"
               pad="small"
               align="center"
             >
@@ -105,7 +105,7 @@ function About() {
             </Box>
             <Box
               margin={{ right: "50px" }}
-              className="hover"
+              className="specialhover"
               pad="small"
               align="center"
             >
@@ -114,14 +114,14 @@ function About() {
             </Box>
             <Box
               margin={{ right: "50px" }}
-              className="hover"
+              className="specialhover"
               pad="small"
               align="center"
             >
               <Github size="50px" />
               <Heading size="20px">Git</Heading>
             </Box>
-            <Box className="hover" pad="small" align="center">
+            <Box className="specialhover" pad="small" align="center">
               <Technology size="50px" />
               <Heading size="20px">Hardware</Heading>
             </Box>
@@ -247,7 +247,7 @@ function About() {
           <Box direction="row" background="white" align="center" pad="small">
             <Box
               margin={{ right: "50px" }}
-              className="hover"
+              className="specialhover"
               pad="small"
               align="center"
             >
@@ -256,7 +256,7 @@ function About() {
             </Box>
             <Box
               margin={{ right: "50px" }}
-              className="hover"
+              className="specialhover"
               pad="small"
               align="center"
             >
@@ -265,7 +265,7 @@ function About() {
             </Box>
             <Box
               margin={{ right: "50px" }}
-              className="hover"
+              className="specialhover"
               pad="small"
               align="center"
             >
@@ -274,7 +274,7 @@ function About() {
             </Box>
             <Box
               margin={{ right: "50px" }}
-              className="hover"
+              className="specialhover"
               pad="small"
               align="center"
             >

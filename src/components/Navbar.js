@@ -12,7 +12,7 @@ function Navbar() {
             href="/"
             color="black"
             label="AVS"
-            className="hover"
+            className="specialhover"
           />
         </Box>
         <Nav
@@ -22,15 +22,30 @@ function Navbar() {
           align="center"
           alignSelf="center"
         >
-          <Anchor className="hover" color="black" href="/" label="Home" />
-          <Anchor className="hover" color="black" href="/about" label="About" />
           <Anchor
-            className="hover"
+            className="specialhover"
+            color="black"
+            href="/"
+            label="Home"
+          />
+          <Anchor
+            className="specialhover"
+            color="black"
+            href="/about"
+            label="About"
+          />
+          <Anchor
+            className="specialhover"
             color="black"
             href="/projects"
             label="Projects"
           />
-          <Anchor className="hover" color="black" href="/goals" label="Goals" />
+          <Anchor
+            className="specialhover"
+            color="black"
+            href="/goals"
+            label="Goals"
+          />
         </Nav>
         <Nav direction="row" align="center">
           <Button

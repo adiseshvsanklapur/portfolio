@@ -28,12 +28,11 @@ function Goals() {
               My dream ever since middle school has been to get into the
               University of California, Berkeley MET Program, a highly selective
               program with a less than 2% acceptance rate for a bachelor's
-              degree. More realistically, however, I would love to get into a
-              University of California school such as UCLA or UC San Diego or
-              maybe even UIUC and study EECS or some form of Data Science. After
-              receiving a bachelors degree, I would like to attend a more
-              prestigious program for a master's degree, such as Stanford's NLP
-              program.
+              degree. I would also love to get into a University of California
+              school such as UCLA or UC San Diego or and study EECS or some form
+              of Data Science. After receiving a bachelors degree, I would like
+              to attend a more prestigious program for a master's degree, such
+              as Stanford's NLP program.
             </Heading>
           </Box>
           <Box align="center" pad="medium">

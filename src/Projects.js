@@ -10,7 +10,13 @@ import {
 } from "grommet";
 // eslint-disable-next-line
 import App from "./App.css";
-import { Camera, SettingsOption, Car, Folder, Location } from "grommet-icons";
+import {
+  Camera,
+  SettingsOption,
+  Car,
+  LineChart,
+  Location,
+} from "grommet-icons";
 import AdiFooter from "./AdiFooter";
 import Navbar from "./components/Navbar";
 
@@ -136,7 +142,7 @@ function Projects() {
                   have already started switching to more renewable forms of
                   energy. More specifically, solar powered items are gaining
                   more and more popularity. To get a better understanding of how
-                  these systems work together, we designed and manufactured a
+                  these systems work together, I designed and manufactured a
                   simple solar car that uses solar panels to charge up, and
                   stores the energy in a hydrogen fuel cell.{" "}
                 </Heading>
@@ -164,7 +170,7 @@ function Projects() {
             textAlign="center"
             color="white"
           >
-            Other Notable Projects
+            Other
           </Heading>
         </Box>
         <Box
@@ -206,12 +212,11 @@ function Projects() {
                 margin={{ left: "50px", right: "50px", bottom: "30px" }}
               >
                 <Heading alignContent="center" textAlign="center" size="20px">
-                  I am the co-founder and manage most of the operations at
-                  Carto-Campus. Carto-Campus is an interactive application that
-                  provides students and teachers a platform to navigate from
-                  class to class without any difficulties. With schools being
-                  augmented, traversing through school campuses has become
-                  harder than ever before.{" "}
+                  I developed the functionality for Carto-Campus, the school
+                  navigation application for school campuses in the Pleasanton
+                  area, using JavaScript (React, Node), Google Firebase, and
+                  other related technologies. Reached over 100 users for the
+                  application, while also protecting user security.{" "}
                 </Heading>
               </CardBody>
               <CardFooter>
@@ -237,21 +242,20 @@ function Projects() {
               margin={{ bottom: "50px" }}
             >
               <CardHeader margin={{ top: "30px" }}>
-                <Folder color="black" size="50px" />
+                <LineChart color="black" size="50px" />
                 <Heading color="black" size="40px">
-                  Portfolio
+                  EMN Trading Strategy
                 </Heading>
               </CardHeader>
               <CardBody
                 margin={{ left: "50px", right: "50px", bottom: "30px" }}
               >
                 <Heading alignContent="center" textAlign="center" size="20px">
-                  I used my prior experience with ReactJS and some other React
-                  frameworks to design and build this site. For example, most of
-                  the components are from Grommet, which is a component library.
-                  This site is hosted on Github Pages, which is a hosting
-                  service provided by Github. When I find the time, I hope to
-                  add more features to the site, such as smooth scroll.{" "}
+                  Utilized the CVXPY open-source modeling library in Python to
+                  replicate an Equity Market Neutral trading strategy on a
+                  sample dataset of 5 emerging and 5 developed trading markets.
+                  Developed this project as a part of the 2023 Cornell Trading
+                  Competition held in New York.
                 </Heading>
               </CardBody>
               <CardFooter>
@@ -286,12 +290,11 @@ function Projects() {
                 margin={{ left: "50px", right: "50px", bottom: "30px" }}
               >
                 <Heading alignContent="center" textAlign="center" size="20px">
-                  When self-studying for my APCSA exam, I made some projects to
-                  enhance my Java knowledge. An example of this is a Photo
-                  Editor, application, which has numerous features such as Edge
-                  Detection and other a painting tool. I used JFrame, a pretty
-                  outdated Java library, so the UI looks a little outdated. I
-                  hope to migrate the program to JavaFX in the future.{" "}
+                  A Photo Editor application which has numerous features such as
+                  Edge Detection and painting tools. Developed using JFrame, a
+                  fairly outdated Java library, causing the UI to look a little
+                  outdated. I hope to migrate the program to JavaFX, a more
+                  modern library, in the future.{" "}
                 </Heading>
               </CardBody>
               <CardFooter>

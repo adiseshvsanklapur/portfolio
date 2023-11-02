@@ -13,7 +13,7 @@ function Home() {
           <Image
             margin={{ top: "100px" }}
             height="200px"
-            src="./adiportfolio.png"
+            src=""
             className="hover"
           />
           <Heading
@@ -31,7 +31,7 @@ function Home() {
             textAlign="center"
             color="gray"
           >
-            Junior At Foothill High School
+            Freshman at The University of California, Davis
           </Heading>
           <Box direction="row" align="center">
             <Button

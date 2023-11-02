@@ -17,11 +17,10 @@ function Resume() {
             color="#0091ff"
             margin={{ bottom: "50px" }}
             className="hover"
-            href="https://drive.google.com/file/d/1aRuvI77Ysy6FSYAxOqnGMi1GR7mZz_80/view?usp=sharing"
+            href="https://drive.google.com/file/d/1B1-rMCsYGMuIr1r6UtT8foYvhQaZYEcY/view?usp=sharing"
             target="_blank"
           />
           <Image src="./adiresume1.png" />
-          <Image src="./adiresume2.png" />
         </Box>
       </Grommet>
       <AdiFooter />

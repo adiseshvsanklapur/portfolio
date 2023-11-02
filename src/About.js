@@ -9,6 +9,7 @@ import {
   Music,
   Technology,
   Github,
+  Analytics,
   Add,
   SettingsOption,
 } from "grommet-icons";
@@ -40,9 +41,12 @@ function About() {
               textAlign="center"
               color="#4f4f4f"
             >
-              I am currently a Junior at Foothill High School who is passionate
-              and excited about Engineering. I hope to pursue a career either in
-              Electrical Engineering or Computer Science.
+              Hi! I'm Adisesh (I go by Adi), and I'm a passionate first-year
+              student at the University of California, Davis. With a major in
+              Data Science, coupled with skills in Computer Science and
+              Engineering, I strive to explore the endless possibilities in
+              these fields. I'm based in the Bay Area and I'm looking for
+              internship opportunities surrounding these fields.
             </Heading>
           </Box>
         </Box>
@@ -118,6 +122,15 @@ function About() {
               pad="small"
               align="center"
             >
+              <Analytics size="50px" />
+              <Heading size="20px">R</Heading>
+            </Box>
+            <Box
+              margin={{ right: "50px" }}
+              className="specialhover"
+              pad="small"
+              align="center"
+            >
               <Github size="50px" />
               <Heading size="20px">Git</Heading>
             </Box>
@@ -166,19 +179,19 @@ function About() {
             margin={{ bottom: "50px" }}
           >
             <CardHeader margin={{ top: "30px" }}>
-              <Code color="black" size="50px" />
+              <Music color="black" size="50px" />
               <Heading color="black" size="40px">
-                Coding
+                Piano
               </Heading>
             </CardHeader>
             <CardBody margin={{ left: "50px", right: "50px", bottom: "30px" }}>
               <Heading alignContent="center" textAlign="center" size="20px">
-                I have always been passionate about coding. More specifically, I
-                am very interested in Data Structures, Algorithms, and Backend
-                Architectures. However, for fun, I like to do some frontend
-                projects too (like this one!). I was first exposed to it in
-                middle school by my dad, and I've been in love with it ever
-                since.{" "}
+                I have been playing the piano for as long as I can remember. I
+                completed the final level of the Certificate of Merit (Level 10)
+                when I was 15; furthermore, I've participated and won at
+                competitions such as USOMC, Northern California Young Talents,
+                and Berkeley Piano Club's annual piano competition. Personally,
+                I enjoy playing pieces by Chopin and Rachmaninoff.{" "}
               </Heading>
             </CardBody>
           </Card>
@@ -191,19 +204,17 @@ function About() {
             margin={{ bottom: "50px" }}
           >
             <CardHeader margin={{ top: "30px" }}>
-              <Music color="black" size="50px" />
+              <Code color="black" size="50px" />
               <Heading color="black" size="40px">
-                Piano
+                Coding
               </Heading>
             </CardHeader>
             <CardBody margin={{ left: "50px", right: "50px", bottom: "30px" }}>
               <Heading alignContent="center" textAlign="center" size="20px">
-                I have been playing the piano for as long as I can remember. I
-                completed the final level of the Certificate of Merit Level 10
-                (final level) a couple of years ago. I don't participate in as
-                many competitions as I'd like to, but I still continue to play
-                for fun. Personally, I enjoy playing pieces by Chopin and
-                Rachmaninoff.{" "}
+                My passion for coding has been a constant driving force since I
+                was 11. My primary areas of interest encompass Data Structures,
+                Algorithms, and Backend Architectures. Additionally, I find
+                enjoyment in frontend projects as well (such as this portfolio!)
               </Heading>
             </CardBody>
           </Card>
@@ -223,12 +234,13 @@ function About() {
             </CardHeader>
             <CardBody margin={{ left: "50px", right: "50px", bottom: "30px" }}>
               <Heading alignContent="center" textAlign="center" size="20px">
-                Ever since 7th grade, I've enjoyed making robots of all sorts
-                using Arduinos and the components that go along with them. Using
-                Arduino, I've created solutions to simple real world problems,
-                such as an alarm that activates a car to wake me up. The car
-                rolls on my bed, and it's irritating movements are very
-                successful at waking me up.{" "}
+                The handshake between hardware and software has always
+                fascinated me, and I chose to enable myself with some Arduino
+                skills to help apply my coding knoweldge while also solving
+                simple real world problems. One of my favorite projects was an
+                alarm that activates a car to wake me up. The car rolls on my
+                bed, and it's irritating movements are very successful at waking
+                me up.{" "}
               </Heading>
             </CardBody>
           </Card>
@@ -261,7 +273,7 @@ function About() {
               align="center"
             >
               <Code size="50px" />
-              <Heading size="20px">Computer Science (UC Berkeley)</Heading>
+              <Heading size="20px">CS at UC Berkeley ATDP</Heading>
             </Box>
             <Box
               margin={{ right: "50px" }}
@@ -270,7 +282,16 @@ function About() {
               align="center"
             >
               <SettingsOption size="50px" />
-              <Heading size="20px">Honors Principles of Engineering</Heading>
+              <Heading size="20px">Hon. Principles of Engineering</Heading>
+            </Box>
+            <Box
+              margin={{ right: "50px" }}
+              className="specialhover"
+              pad="small"
+              align="center"
+            >
+              <SettingsOption size="50px" />
+              <Heading size="20px">Hon. Aerospace Engineering</Heading>
             </Box>
             <Box
               margin={{ right: "50px" }}
@@ -279,7 +300,7 @@ function About() {
               align="center"
             >
               <Add size="50px" />
-              <Heading size="20px">AP Calculus AB</Heading>
+              <Heading size="20px">Calculus (MAT 21B)</Heading>
             </Box>
           </Box>
         </Box>

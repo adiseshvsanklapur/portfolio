@@ -42,12 +42,12 @@ function AdiFooter() {
         <Box align="center" direction="row" gap="xsmall">
           <Code />
           <Text alignSelf="center" size="small" color="black">
-            Adisesh VS
+            Adi Venkatesh Sanklapur
           </Text>
         </Box>
         <Media />
         <Text textAlign="center" size="small">
-          Foothill Class of 2023
+          UCD Class of 2027
         </Text>
       </Footer>
     </Grommet>

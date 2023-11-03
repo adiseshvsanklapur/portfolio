@@ -10,14 +10,8 @@ function Home() {
       <Grommet className="grommet">
         <Navbar />
         <Box background="black" align="center">
-          <Image
-            margin={{ top: "100px" }}
-            height="200px"
-            src=""
-            className="hover"
-          />
           <Heading
-            margin={{ top: "30px", bottom: "none" }}
+            margin={{ top: "200px", bottom: "none" }}
             alignSelf="center"
             textAlign="center"
             color="white"

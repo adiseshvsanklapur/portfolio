@@ -40,12 +40,6 @@ function Navbar() {
             href="/projects"
             label="Projects"
           />
-          <Anchor
-            className="specialhover"
-            color="black"
-            href="/goals"
-            label="Goals"
-          />
         </Nav>
         <Nav direction="row" align="center">
           <Button

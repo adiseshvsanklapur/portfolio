@@ -264,10 +264,10 @@ function Projects() {
                   weight="bold"
                   primary
                   color="#0091ff"
-                  href="https://github.com/adiseshvsanklapur/portfolio"
+                  href="https://github.com/adiseshvsanklapur/CQF-SystematicEquities"
                   target="_blank"
                   className="hover"
-                  label="View Deployment"
+                  label="View Project"
                   margin={{ bottom: "30px" }}
                 />
               </CardFooter>

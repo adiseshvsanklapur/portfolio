@@ -1,4 +1,4 @@
-import { Grommet, Box, Heading, Button, Image } from "grommet";
+import { Grommet, Box, Heading, Button } from "grommet";
 import Navbar from "./components/Navbar";
 import AdiFooter from "./AdiFooter";
 // eslint-disable-next-line

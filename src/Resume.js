@@ -17,7 +17,7 @@ function Resume() {
             color="#0091ff"
             margin={{ bottom: "50px" }}
             className="hover"
-            href="https://drive.google.com/file/d/1B1-rMCsYGMuIr1r6UtT8foYvhQaZYEcY/view?usp=sharing"
+            href="https://drive.google.com/file/d/1PaY2oluX32aTDrQXblP9h0uRYwsabS1A/view?usp=sharing"
             target="_blank"
           />
           <Image src="./adiresume1.png" />

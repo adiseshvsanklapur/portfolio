@@ -47,7 +47,7 @@ function AdiFooter() {
         </Box>
         <Media />
         <Text textAlign="center" size="small">
-          UCD Class of 2027
+          UC Davis
         </Text>
       </Footer>
     </Grommet>

@@ -41,7 +41,7 @@ function About() {
               textAlign="center"
               color="#4f4f4f"
             >
-              Hi! I'm Adisesh (I go by Adi), and I'm a passionate first-year
+              Hi! I'm Adisesh (I go by Adi), and I'm a passionate second-year
               student at the University of California, Davis. With a major in
               Data Science, coupled with skills in Computer Science and
               Engineering, I strive to explore the endless possibilities in

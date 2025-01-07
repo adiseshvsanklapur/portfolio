@@ -300,7 +300,7 @@ function About() {
               align="center"
             >
               <Add size="50px" />
-              <Heading size="20px">Calculus (MAT 21B)</Heading>
+              <Heading size="20px">Modern Linear Algebra (MAT 067)</Heading>
             </Box>
           </Box>
         </Box>

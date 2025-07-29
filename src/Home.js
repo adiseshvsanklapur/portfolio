@@ -25,7 +25,7 @@ function Home() {
             textAlign="center"
             color="gray"
           >
-            Freshman at The University of California, Davis
+            Junior at The University of California, Davis
           </Heading>
           <Box direction="row" align="center">
             <Button

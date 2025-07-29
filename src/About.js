@@ -1,4 +1,12 @@
-import { Grommet, Box, Heading, Card, CardBody, CardHeader } from "grommet";
+import {
+  Grommet,
+  Box,
+  Heading,
+  Card,
+  CardBody,
+  CardHeader,
+  Button,
+} from "grommet";
 import {
   Java,
   Html5,
@@ -11,7 +19,10 @@ import {
   Github,
   Analytics,
   Add,
-  SettingsOption,
+  Amazon,
+  LineChart,
+  BarChart,
+  Database,
 } from "grommet-icons";
 import React from "react";
 // eslint-disable-next-line
@@ -36,18 +47,26 @@ function About() {
             </Heading>
             <Heading
               pad="small"
-              size="small"
+              size="32px"
               alignSelf="center"
               textAlign="center"
               color="#4f4f4f"
             >
-              Hi! I'm Adisesh (I go by Adi), and I'm a passionate first-year
+              Hi! I'm Adisesh (I go by Adi), and I'm a passionate third-year
               student at the University of California, Davis. With a major in
               Data Science, coupled with skills in Computer Science and
               Engineering, I strive to explore the endless possibilities in
               these fields. I'm based in the Bay Area and I'm looking for
               internship opportunities surrounding these fields.
             </Heading>
+            <Button
+              primary
+              alignSelf="center"
+              label="My Projects"
+              color="#0091ff"
+              className="hover"
+              href="/projects"
+            />
           </Box>
         </Box>
         <Box background="black" align="center">
@@ -105,7 +124,25 @@ function About() {
               align="center"
             >
               <Code size="50px" />
-              <Heading size="20px">Python</Heading>
+              <Heading size="20px">Python (w/ML Libraries)</Heading>
+            </Box>
+            <Box
+              margin={{ right: "50px" }}
+              className="specialhover"
+              pad="small"
+              align="center"
+            >
+              <Amazon size="50px" />
+              <Heading size="20px">AWS Certified</Heading>
+            </Box>
+            <Box
+              margin={{ right: "50px" }}
+              className="specialhover"
+              pad="small"
+              align="center"
+            >
+              <Database size="50px" />
+              <Heading size="20px">SQL</Heading>
             </Box>
             <Box
               margin={{ right: "50px" }}
@@ -211,10 +248,13 @@ function About() {
             </CardHeader>
             <CardBody margin={{ left: "50px", right: "50px", bottom: "30px" }}>
               <Heading alignContent="center" textAlign="center" size="20px">
-                My passion for coding has been a constant driving force since I
-                was 11. My primary areas of interest encompass Data Structures,
-                Algorithms, and Backend Architectures. Additionally, I find
-                enjoyment in frontend projects as well (such as this portfolio!)
+                I’ve been passionate about coding since I was 11, and that
+                curiosity has evolved into a strong foundation in Artificial
+                Intelligence, System Design, and core Computer Science
+                principles like Data Structures and Algorithms. I also enjoy
+                bringing ideas to life through frontend development—this
+                portfolio is one example. I'm always eager to build impactful
+                systems that combine technical rigor with real-world usability.
               </Heading>
             </CardBody>
           </Card>
@@ -263,6 +303,42 @@ function About() {
               pad="small"
               align="center"
             >
+              <Code size="50px" />
+              <Heading size="20px">Data Structures and Algorithms</Heading>
+            </Box>
+            <Box
+              margin={{ right: "50px" }}
+              className="specialhover"
+              pad="small"
+              align="center"
+            >
+              <LineChart size="50px" />
+              <Heading size="20px">Optimization</Heading>
+            </Box>
+            <Box
+              margin={{ right: "50px" }}
+              className="specialhover"
+              pad="small"
+              align="center"
+            >
+              <BarChart size="50px" />
+              <Heading size="20px">Statistical Machine Learning</Heading>
+            </Box>
+            <Box
+              margin={{ right: "50px" }}
+              className="specialhover"
+              pad="small"
+              align="center"
+            >
+              <Database size="50px" />
+              <Heading size="20px">Databases</Heading>
+            </Box>
+            <Box
+              margin={{ right: "50px" }}
+              className="specialhover"
+              pad="small"
+              align="center"
+            >
               <Reactjs size="50px" />
               <Heading size="20px">Physics</Heading>
             </Box>
@@ -281,26 +357,8 @@ function About() {
               pad="small"
               align="center"
             >
-              <SettingsOption size="50px" />
-              <Heading size="20px">Hon. Principles of Engineering</Heading>
-            </Box>
-            <Box
-              margin={{ right: "50px" }}
-              className="specialhover"
-              pad="small"
-              align="center"
-            >
-              <SettingsOption size="50px" />
-              <Heading size="20px">Hon. Aerospace Engineering</Heading>
-            </Box>
-            <Box
-              margin={{ right: "50px" }}
-              className="specialhover"
-              pad="small"
-              align="center"
-            >
               <Add size="50px" />
-              <Heading size="20px">Calculus (MAT 21B)</Heading>
+              <Heading size="20px">Calculus</Heading>
             </Box>
           </Box>
         </Box>

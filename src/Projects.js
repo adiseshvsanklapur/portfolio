@@ -160,18 +160,18 @@ function Projects() {
               <CardHeader margin={{ top: "30px" }}>
                 <Article color="black" size="50px" />
                 <Heading color="black" size="40px">
-                  Fake News Detector
+                  AI Slides Creator
                 </Heading>
               </CardHeader>
               <CardBody
                 margin={{ left: "50px", right: "50px", bottom: "30px" }}
               >
                 <Heading alignContent="center" textAlign="center" size="20px">
-                  Built a Python-based fake news detection system leveraging
-                  scikit-learn and TF-IDF vectorization, achieving over 60%
-                  accuracy. Implemented extensive text preprocessing and
-                  multiple classifiers to reliably distinguish between real and
-                  fake news articles. Developed as part of HackDavis 2024.
+                  Built a full-stack LLM-powered tool that processes uploaded
+                  documents into business-grade slide decks using GPT-4o for
+                  summarization and python-pptx for automated generation.
+                  Features a FastAPI backend, Streamlit frontend, and optional
+                  Ollama integration for offline inference.
                 </Heading>
               </CardBody>
               <CardFooter>
@@ -180,7 +180,7 @@ function Projects() {
                   weight="bold"
                   primary
                   color="#0091ff"
-                  href="https://github.com/adiseshvsanklapur/FakeNewsDetector"
+                  href="https://github.com/adiseshvsanklapur/ai-slides-generator"
                   target="_blank"
                   className="hover"
                   label="View Project"
@@ -289,6 +289,68 @@ function Projects() {
                 />
               </CardFooter>
             </Card>
+            <Card
+              background="white"
+              align="center"
+              alignContent="center"
+              round="medium"
+              className="hover"
+              margin={{ bottom: "50px" }}
+            >
+              <CardHeader margin={{ top: "30px" }}>
+                <Article color="black" size="50px" />
+                <Heading color="black" size="40px">
+                  Fake News Detector
+                </Heading>
+              </CardHeader>
+              <CardBody
+                margin={{ left: "50px", right: "50px", bottom: "30px" }}
+              >
+                <Heading alignContent="center" textAlign="center" size="20px">
+                  Built a Python-based fake news detection system leveraging
+                  scikit-learn and TF-IDF vectorization, achieving over 60%
+                  accuracy. Implemented extensive text preprocessing and
+                  multiple classifiers to reliably distinguish between real and
+                  fake news articles. Developed as part of HackDavis 2024.
+                </Heading>
+              </CardBody>
+              <CardFooter>
+                <Button
+                  hoverIndicator
+                  weight="bold"
+                  primary
+                  color="#0091ff"
+                  href="https://github.com/adiseshvsanklapur/FakeNewsDetector"
+                  target="_blank"
+                  className="hover"
+                  label="View Project"
+                  margin={{ bottom: "30px" }}
+                />
+              </CardFooter>
+            </Card>
+          </Box>
+        </Box>
+        <Box
+          align="center"
+          alignContent="center"
+          alignSelf="center"
+          background="black"
+        >
+          <Box
+            margin={{
+              left: "50px",
+              right: "50px",
+              top: "50px",
+              bottom: "none",
+            }}
+            alignContent="center"
+            textAlign="center"
+            alignSelf="center"
+            align="center"
+            gap="large"
+            direction="row"
+            background="black"
+          >
             <Card
               background="white"
               align="center"

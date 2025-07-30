@@ -47,7 +47,7 @@ function Navbar() {
             weight="bold"
             primary
             color="#0091ff"
-            href="/resume"
+            href="https://drive.google.com/file/d/1B1-rMCsYGMuIr1r6UtT8foYvhQaZYEcY/view?usp=sharing"
             className="hover"
             label="My Résumé →"
           />

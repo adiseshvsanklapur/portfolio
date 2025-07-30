@@ -19,6 +19,7 @@ import {
   MapLocation,
   PieChart,
   Article,
+  Analytics,
 } from "grommet-icons";
 import AdiFooter from "./AdiFooter";
 import Navbar from "./components/Navbar";
@@ -158,7 +159,7 @@ function Projects() {
               margin={{ bottom: "50px" }}
             >
               <CardHeader margin={{ top: "30px" }}>
-                <Article color="black" size="50px" />
+                <Analytics color="black" size="50px" />
                 <Heading color="black" size="40px">
                   AI Slides Creator
                 </Heading>

@@ -422,7 +422,7 @@ function Projects() {
                   weight="bold"
                   primary
                   color="#0091ff"
-                  href="https://github.com/adiseshvsanklapur/PhotoEditor"
+                  href="https://github.com/adiseshvsanklapur/portfolio"
                   target="_blank"
                   className="hover"
                   label="View Project"

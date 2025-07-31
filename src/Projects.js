@@ -410,7 +410,7 @@ function Projects() {
                 margin={{ left: "50px", right: "50px", bottom: "30px" }}
               >
                 <Heading alignContent="center" textAlign="center" size="20px">
-                  Built a personal portfolio using React.js and Grommet to
+                  Built this personal portfolio using React.js and Grommet to
                   showcase technical projects with a clean, responsive UI and
                   smooth UX. Deployed on Netlify with CI/CD for fast performance
                   and easy updates.

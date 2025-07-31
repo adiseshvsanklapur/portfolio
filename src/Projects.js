@@ -20,6 +20,7 @@ import {
   PieChart,
   Article,
   Analytics,
+  Code,
 } from "grommet-icons";
 import AdiFooter from "./AdiFooter";
 import Navbar from "./components/Navbar";
@@ -375,6 +376,44 @@ function Projects() {
                   fairly outdated Java library, causing the UI to look a little
                   outdated. I hope to migrate the program to JavaFX, a more
                   modern library, in the future.{" "}
+                </Heading>
+              </CardBody>
+              <CardFooter>
+                <Button
+                  hoverIndicator
+                  weight="bold"
+                  primary
+                  color="#0091ff"
+                  href="https://github.com/adiseshvsanklapur/PhotoEditor"
+                  target="_blank"
+                  className="hover"
+                  label="View Project"
+                  margin={{ bottom: "30px" }}
+                />
+              </CardFooter>
+            </Card>
+            <Card
+              background="white"
+              align="center"
+              alignContent="center"
+              round="medium"
+              className="hover"
+              margin={{ bottom: "50px" }}
+            >
+              <CardHeader margin={{ top: "30px" }}>
+                <Code color="black" size="50px" />
+                <Heading color="black" size="40px">
+                  Portfolio
+                </Heading>
+              </CardHeader>
+              <CardBody
+                margin={{ left: "50px", right: "50px", bottom: "30px" }}
+              >
+                <Heading alignContent="center" textAlign="center" size="20px">
+                  Built a personal portfolio using React.js and Grommet to
+                  showcase technical projects with a clean, responsive UI and
+                  smooth UX. Deployed on Netlify with CI/CD for fast performance
+                  and easy updates.
                 </Heading>
               </CardBody>
               <CardFooter>

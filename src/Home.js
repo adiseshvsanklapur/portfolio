@@ -24,7 +24,7 @@ function Home() {
           <div className="hero-links hero-links-spaced reveal" style={{ "--delay": "280ms" }}>
             <a
               className="icon-link"
-              href="https://www.linkedin.com/in/adisesh-venkatesh-sanklapur-75405a21b/"
+              href="https://www.linkedin.com/in/adivsanklapur/"
               target="_blank"
               rel="noreferrer"
               aria-label="LinkedIn"

@@ -4,7 +4,7 @@ function AdiFooter() {
       <div className="footer-icons">
         <a
           className="footer-icon"
-          href="https://www.linkedin.com/in/adisesh-venkatesh-sanklapur-75405a21b/"
+          href="https://www.linkedin.com/in/adivsanklapur/"
           target="_blank"
           rel="noreferrer"
           aria-label="LinkedIn"

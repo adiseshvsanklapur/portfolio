@@ -1,56 +1,44 @@
-import { Anchor, Box, Grommet, Text, Footer } from "grommet";
-
-import { Mail, Github, Linkedin, Code, Phone } from "grommet-icons";
-
-const Media = () => (
-  <Box direction="row" gap="xxsmall" justify="center">
-    <Anchor
-      a11yTitle="Check me out on Github"
-      href="https://github.com/adiseshvsanklapur"
-      className="hover"
-      target="_blank"
-      icon={<Github color="black" />}
-    />
-    <Anchor
-      a11yTitle="Check me out on Linkedin"
-      href="https://www.linkedin.com/in/adisesh-venkatesh-sanklapur-75405a21b/"
-      className="hover"
-      target="_blank"
-      icon={<Linkedin color="black" />}
-    />
-    <Anchor
-      a11yTitle="Email me"
-      href="mailto:adivsanklapur@gmail.com"
-      className="hover"
-      target="_blank"
-      icon={<Mail color="black" />}
-    />
-    <Anchor
-      a11yTitle="Email me"
-      href="tel:9254759477"
-      className="hover"
-      target="_blank"
-      icon={<Phone color="black" />}
-    />
-  </Box>
-);
-
 function AdiFooter() {
   return (
-    <Grommet className="grommet">
-      <Footer background="white" pad="small">
-        <Box align="center" direction="row" gap="xsmall">
-          <Code />
-          <Text alignSelf="center" size="small" color="black">
-            Adi Venkatesh Sanklapur
-          </Text>
-        </Box>
-        <Media />
-        <Text textAlign="center" size="small">
-          UC Davis
-        </Text>
-      </Footer>
-    </Grommet>
+    <footer className="footer-min">
+      <div className="footer-icons">
+        <a
+          className="footer-icon"
+          href="https://www.linkedin.com/in/adisesh-venkatesh-sanklapur-75405a21b/"
+          target="_blank"
+          rel="noreferrer"
+          aria-label="LinkedIn"
+          data-tooltip="Connect on LinkedIn"
+        >
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path d="M6 9h3v9H6zM7.5 6.5a1.5 1.5 0 11.001-3.001A1.5 1.5 0 017.5 6.5zM11 9h3v1.2c.6-.9 1.6-1.4 2.9-1.4 2.2 0 3.6 1.4 3.6 4v5.2h-3v-4.6c0-1.1-.4-1.8-1.4-1.8-1 0-1.6.7-1.8 1.4-.1.2-.1.6-.1 1v4h-3V9z" strokeWidth="1.4" />
+          </svg>
+        </a>
+        <a
+          className="footer-icon"
+          href="https://github.com/adiseshvsanklapur"
+          target="_blank"
+          rel="noreferrer"
+          aria-label="GitHub"
+          data-tooltip="View GitHub"
+        >
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path d="M12 2C6.5 2 2 6.6 2 12.2c0 4.5 2.9 8.4 7 9.7.5.1.7-.2.7-.5v-1.8c-2.8.6-3.4-1.2-3.4-1.2-.4-1-.9-1.3-.9-1.3-.8-.6.1-.6.1-.6 1 .1 1.6 1 1.6 1 .9 1.6 2.5 1.1 3.1.8.1-.7.4-1.1.7-1.4-2.2-.3-4.5-1.1-4.5-5 0-1.1.4-2 .9-2.7-.1-.2-.4-1.2.1-2.5 0 0 .8-.3 2.8 1a9.4 9.4 0 015.1 0c2-1.3 2.8-1 2.8-1 .5 1.3.2 2.3.1 2.5.6.7.9 1.6.9 2.7 0 3.9-2.3 4.7-4.5 5 .4.3.8 1 .8 2v2.9c0 .3.2.6.7.5 4.1-1.3 7-5.2 7-9.7C22 6.6 17.5 2 12 2z" strokeWidth="1.2" />
+          </svg>
+        </a>
+        <a
+          className="footer-icon"
+          href="mailto:adivsanklapur@gmail.com"
+          aria-label="Email"
+          data-tooltip="Send an email"
+        >
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <rect x="3" y="5" width="18" height="14" rx="2" strokeWidth="2" />
+            <path d="M3 7l9 6 9-6" strokeWidth="2" strokeLinecap="round" />
+          </svg>
+        </a>
+      </div>
+    </footer>
   );
 }
 

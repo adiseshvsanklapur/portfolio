@@ -1,59 +1,25 @@
-import { Button, Anchor, Box, Grommet, Header, Nav } from "grommet";
-import { Code } from "grommet-icons";
-
 function Navbar() {
   return (
-    <Grommet className="grommet">
-      <Header background="white" pad="medium" align="center">
-        <Box direction="row" gap="small" align="center">
-          <Code size="50px" color="#0091ff" />
-          <Anchor
-            size="x-large"
-            href="/"
-            color="black"
-            label="AVS"
-            className="specialhover"
-          />
-        </Box>
-        <Nav
-          margin={{ right: "none" }}
-          direction="row"
-          alignContent="center"
-          align="center"
-          alignSelf="center"
+    <header className="nav">
+      <div className="container nav-inner">
+        <a className="logo" href="/">
+          AVS
+        </a>
+        <nav className="nav-links">
+          <a href="/">Home</a>
+          <a href="/about">About</a>
+          <a href="/projects">Projects</a>
+        </nav>
+        <a
+          className="btn btn-primary nav-cta"
+          href="https://drive.google.com/file/d/1CgGyaktWdks0AhLIrAz8l2sS0c02njjC/view?usp=sharing"
+          target="_blank"
+          rel="noreferrer"
         >
-          <Anchor
-            className="specialhover"
-            color="black"
-            href="/"
-            label="Home"
-          />
-          <Anchor
-            className="specialhover"
-            color="black"
-            href="/about"
-            label="About"
-          />
-          <Anchor
-            className="specialhover"
-            color="black"
-            href="/projects"
-            label="Projects"
-          />
-        </Nav>
-        <Nav direction="row" align="center">
-          <Button
-            hoverIndicator
-            weight="bold"
-            primary
-            color="#0091ff"
-            href="https://drive.google.com/file/d/1B1-rMCsYGMuIr1r6UtT8foYvhQaZYEcY/view?usp=sharing"
-            className="hover"
-            label="My Résumé →"
-          />
-        </Nav>
-      </Header>
-    </Grommet>
+          Resume
+        </a>
+      </div>
+    </header>
   );
 }
 

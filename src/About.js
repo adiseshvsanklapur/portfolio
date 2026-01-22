@@ -1,370 +1,250 @@
-import {
-  Grommet,
-  Box,
-  Heading,
-  Card,
-  CardBody,
-  CardHeader,
-  Button,
-} from "grommet";
-import {
-  Java,
-  Html5,
-  Css3,
-  Reactjs,
-  Swift,
-  Code,
-  Music,
-  Technology,
-  Github,
-  Analytics,
-  Add,
-  Amazon,
-  LineChart,
-  BarChart,
-  Database,
-} from "grommet-icons";
 import React from "react";
 // eslint-disable-next-line
 import App from "./App.css";
 import AdiFooter from "./AdiFooter";
-import Navbar from "./components/Navbar";
+
+const skills = {
+  Languages: [
+    "C++20",
+    "Python",
+    "Java",
+    "C",
+    "SQL (PostgreSQL)",
+    "TypeScript",
+    "JavaScript",
+    "R",
+    "Bash",
+  ],
+  "ML & Data": [
+    "PyTorch",
+    "SBERT",
+    "scikit-learn",
+    "Vector DBs (ChromaDB)",
+    "NumPy",
+    "Pandas",
+    "YOLOv8",
+    "OpenCV",
+  ],
+  "Tools & Infrastructure": [
+    "FastAPI",
+    "React",
+    "Next.js",
+    "Docker",
+    "Kubernetes",
+    "Linux",
+    "Git",
+    {
+      label: "AWS Certified Cloud Practitioner",
+      href: "https://www.credly.com/badges/82b5745f-7dcf-4b49-96c1-f3d7a0d95ec0/public_url",
+    },
+  ],
+};
+
+const coursework = [
+  {
+    title: "Data Structures and Algorithms",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+        <path d="M4 7h16M4 12h16M4 17h16" strokeWidth="2" strokeLinecap="round" />
+      </svg>
+    ),
+  },
+  {
+    title: "Systems Programming",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+        <rect x="4" y="5" width="16" height="14" rx="2" strokeWidth="2" />
+        <path d="M8 9h8M8 13h6" strokeWidth="2" strokeLinecap="round" />
+      </svg>
+    ),
+  },
+  {
+    title: "Convex Optimization",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+        <path d="M4 18l6-8 4 4 6-10" strokeWidth="2" strokeLinecap="round" />
+      </svg>
+    ),
+  },
+  {
+    title: "Distributed Data Pipelines",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+        <circle cx="6" cy="12" r="2.5" strokeWidth="2" />
+        <circle cx="18" cy="6" r="2.5" strokeWidth="2" />
+        <circle cx="18" cy="18" r="2.5" strokeWidth="2" />
+        <path d="M8.5 12h7M7.5 10.5l8-4M7.5 13.5l8 4" strokeWidth="2" strokeLinecap="round" />
+      </svg>
+    ),
+  },
+  {
+    title: "Database Management Systems",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+        <ellipse cx="12" cy="6" rx="7" ry="3" strokeWidth="2" />
+        <path d="M5 6v6c0 1.7 3.1 3 7 3s7-1.3 7-3V6" strokeWidth="2" />
+        <path d="M5 12v6c0 1.7 3.1 3 7 3s7-1.3 7-3v-6" strokeWidth="2" />
+      </svg>
+    ),
+  },
+  {
+    title: "Advanced Probability",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+        <path d="M4 16c2-4 4-6 8-6s6 2 8 6" strokeWidth="2" strokeLinecap="round" />
+        <path d="M4 8c2-2 4-3 8-3s6 1 8 3" strokeWidth="2" strokeLinecap="round" />
+      </svg>
+    ),
+  },
+  {
+    title: "Linear Algebra",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+        <path d="M5 19V5h14" strokeWidth="2" strokeLinecap="round" />
+        <path d="M8 16l8-8" strokeWidth="2" strokeLinecap="round" />
+        <path d="M8 8h4v4" strokeWidth="2" strokeLinecap="round" />
+      </svg>
+    ),
+  },
+  {
+    title: "Discrete Mathematics",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+        <circle cx="7" cy="7" r="2.5" strokeWidth="2" />
+        <circle cx="17" cy="7" r="2.5" strokeWidth="2" />
+        <circle cx="12" cy="17" r="2.5" strokeWidth="2" />
+        <path d="M9 7h6M8.5 9.5l3.5 5M15.5 9.5l-3.5 5" strokeWidth="2" strokeLinecap="round" />
+      </svg>
+    ),
+  },
+];
+
+const highlights = [
+  {
+    title: "Pinpoint (Codelab)",
+    body: "Architected a full-stack Lost & Found platform in Next.js + Supabase with multi-tenant RLS, realtime sync, and Google OAuth domain restrictions.",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+        <circle cx="11" cy="11" r="7" strokeWidth="2" />
+        <path d="M20 20l-3.5-3.5" strokeWidth="2" strokeLinecap="round" />
+      </svg>
+    ),
+  },
+  {
+    title: "Autonomous Vehicles Research",
+    body: "Built ROS/C++ path tracking with Kalman filtering and OpenCV pipelines, improving navigation precision across varied terrain.",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+        <path
+          d="M5 16l1.5-5.5A2 2 0 018.4 9h7.2a2 2 0 011.9 1.5L19 16"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+        <circle cx="8" cy="16" r="2" strokeWidth="2" />
+        <circle cx="16" cy="16" r="2" strokeWidth="2" />
+      </svg>
+    ),
+  },
+  {
+    title: "Data Science Research",
+    body: "Developed a Kohonen SOM and a SLAM-enabled autonomous robot for high-dimensional clustering and real-time mapping.",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+        <rect x="4" y="4" width="16" height="16" rx="3" strokeWidth="2" />
+        <path d="M8 8h8M8 12h8M8 16h5" strokeWidth="2" strokeLinecap="round" />
+      </svg>
+    ),
+  },
+];
 
 function About() {
   return (
-    <div>
-      <Grommet className="grommet">
-        <Navbar />
-        <Box align="center" background="white" height="500px">
-          <Box align="center">
-            <Heading
-              margin={{ top: "100px", bottom: "none" }}
-              alignSelf="center"
-              textAlign="center"
-              color="black"
-            >
-              About Me
-            </Heading>
-            <Heading
-              pad="small"
-              size="32px"
-              alignSelf="center"
-              textAlign="center"
-              color="#4f4f4f"
-            >
-              Hi! I'm Adisesh (I go by Adi), and I'm a passionate third-year
-              student at the University of California, Davis. With a major in
-              Data Science, coupled with skills in Computer Science and
-              Engineering, I strive to explore the endless possibilities in
-              these fields. I'm based in the Bay Area and I'm looking for
-              internship opportunities surrounding these fields.
-            </Heading>
-            <Button
-              primary
-              alignSelf="center"
-              label="My Projects"
-              color="#0091ff"
-              className="hover"
-              href="/projects"
-            />
-          </Box>
-        </Box>
-        <Box background="black" align="center">
-          <Heading
-            margin={{ top: "100px", bottom: "25px" }}
-            alignSelf="center"
-            textAlign="center"
-            color="white"
-          >
-            Skills
-          </Heading>
-        </Box>
-        <Box align="center" background="black">
-          <Box direction="row" background="black" align="center" pad="small">
-            <Box
-              margin={{ right: "50px" }}
-              className="specialhover"
-              pad="small"
-              align="center"
-            >
-              <Css3 size="50px" />
-              <Heading size="20px">CSS 3</Heading>
-            </Box>
-            <Box
-              margin={{ right: "50px" }}
-              className="specialhover"
-              pad="small"
-              align="center"
-            >
-              <Html5 size="50px" />
-              <Heading size="20px">HTML 5</Heading>
-            </Box>
-            <Box
-              margin={{ right: "50px" }}
-              className="specialhover"
-              pad="small"
-              align="center"
-            >
-              <Java size="50px" />
-              <Heading size="20px">Java</Heading>
-            </Box>
-            <Box
-              margin={{ right: "50px" }}
-              className="specialhover"
-              pad="small"
-              align="center"
-            >
-              <Reactjs size="50px" />
-              <Heading size="20px">ReactJS</Heading>
-            </Box>
-            <Box
-              margin={{ right: "50px" }}
-              className="specialhover"
-              pad="small"
-              align="center"
-            >
-              <Code size="50px" />
-              <Heading size="20px">Python (w/ML Libraries)</Heading>
-            </Box>
-            <Box
-              margin={{ right: "50px" }}
-              className="specialhover"
-              pad="small"
-              align="center"
-            >
-              <Amazon size="50px" />
-              <Heading size="20px">AWS Certified</Heading>
-            </Box>
-            <Box
-              margin={{ right: "50px" }}
-              className="specialhover"
-              pad="small"
-              align="center"
-            >
-              <Database size="50px" />
-              <Heading size="20px">SQL</Heading>
-            </Box>
-            <Box
-              margin={{ right: "50px" }}
-              className="specialhover"
-              pad="small"
-              align="center"
-            >
-              <Swift size="50px" />
-              <Heading size="20px">Swift</Heading>
-            </Box>
-            <Box
-              margin={{ right: "50px" }}
-              className="specialhover"
-              pad="small"
-              align="center"
-            >
-              <Analytics size="50px" />
-              <Heading size="20px">R</Heading>
-            </Box>
-            <Box
-              margin={{ right: "50px" }}
-              className="specialhover"
-              pad="small"
-              align="center"
-            >
-              <Github size="50px" />
-              <Heading size="20px">Git</Heading>
-            </Box>
-            <Box className="specialhover" pad="small" align="center">
-              <Technology size="50px" />
-              <Heading size="20px">Hardware</Heading>
-            </Box>
-          </Box>
-        </Box>
-        <Box
-          pad="large"
-          alignContent="center"
-          textAlign="center"
-          alignSelf="center"
-          align="center"
-          gap="large"
-          direction="row"
-          background="black"
-        ></Box>
-        <Box background="#2e2e2e" align="center">
-          <Heading
-            margin={{ top: "50px", bottom: "none" }}
-            alignSelf="center"
-            textAlign="center"
-            color="white"
-          >
-            Hobbies
-          </Heading>
-        </Box>
-        <Box
-          pad="large"
-          alignContent="center"
-          textAlign="center"
-          alignSelf="center"
-          align="center"
-          gap="large"
-          direction="row"
-          background="#2e2e2e"
-        >
-          <Card
-            background="light-1"
-            align="center"
-            alignContent="center"
-            round="medium"
-            className="hover"
-            margin={{ bottom: "50px" }}
-          >
-            <CardHeader margin={{ top: "30px" }}>
-              <Music color="black" size="50px" />
-              <Heading color="black" size="40px">
-                Piano
-              </Heading>
-            </CardHeader>
-            <CardBody margin={{ left: "50px", right: "50px", bottom: "30px" }}>
-              <Heading alignContent="center" textAlign="center" size="20px">
-                I have been playing the piano for as long as I can remember. I
-                completed the final level of the Certificate of Merit (Level 10)
-                when I was 15; furthermore, I've participated and won at
-                competitions such as USOMC, Northern California Young Talents,
-                and Berkeley Piano Club's annual piano competition. Personally,
-                I enjoy playing pieces by Chopin and Rachmaninoff.{" "}
-              </Heading>
-            </CardBody>
-          </Card>
-          <Card
-            background="light-1"
-            align="center"
-            alignContent="center"
-            round="medium"
-            className="hover"
-            margin={{ bottom: "50px" }}
-          >
-            <CardHeader margin={{ top: "30px" }}>
-              <Code color="black" size="50px" />
-              <Heading color="black" size="40px">
-                Coding
-              </Heading>
-            </CardHeader>
-            <CardBody margin={{ left: "50px", right: "50px", bottom: "30px" }}>
-              <Heading alignContent="center" textAlign="center" size="20px">
-                I’ve been passionate about coding since I was 11, and that
-                curiosity has evolved into a strong foundation in Artificial
-                Intelligence, System Design, and core Computer Science
-                principles like Data Structures and Algorithms. I also enjoy
-                bringing ideas to life through frontend development—this
-                portfolio is one example. I'm always eager to build impactful
-                systems that combine technical rigor with real-world usability.
-              </Heading>
-            </CardBody>
-          </Card>
-          <Card
-            background="light-1"
-            align="center"
-            alignContent="center"
-            round="medium"
-            className="hover"
-            margin={{ bottom: "50px" }}
-          >
-            <CardHeader margin={{ top: "30px" }}>
-              <Technology color="black" size="50px" />
-              <Heading color="black" size="40px">
-                Arduino
-              </Heading>
-            </CardHeader>
-            <CardBody margin={{ left: "50px", right: "50px", bottom: "30px" }}>
-              <Heading alignContent="center" textAlign="center" size="20px">
-                The handshake between hardware and software has always
-                fascinated me, and I chose to enable myself with some Arduino
-                skills to help apply my coding knoweldge while also solving
-                simple real world problems. One of my favorite projects was an
-                alarm that activates a car to wake me up. The car rolls on my
-                bed, and it's irritating movements are very successful at waking
-                me up.{" "}
-              </Heading>
-            </CardBody>
-          </Card>
-        </Box>
-        <Box background="white" align="center">
-          <Heading
-            margin={{ top: "50px", bottom: "50px" }}
-            alignSelf="center"
-            textAlign="center"
-            color="black"
-          >
-            Relevant Coursework
-          </Heading>
-        </Box>
-        <Box align="center" background="white">
-          <Box direction="row" background="white" align="center" pad="small">
-            <Box
-              margin={{ right: "50px" }}
-              className="specialhover"
-              pad="small"
-              align="center"
-            >
-              <Code size="50px" />
-              <Heading size="20px">Data Structures and Algorithms</Heading>
-            </Box>
-            <Box
-              margin={{ right: "50px" }}
-              className="specialhover"
-              pad="small"
-              align="center"
-            >
-              <LineChart size="50px" />
-              <Heading size="20px">Optimization</Heading>
-            </Box>
-            <Box
-              margin={{ right: "50px" }}
-              className="specialhover"
-              pad="small"
-              align="center"
-            >
-              <BarChart size="50px" />
-              <Heading size="20px">Statistical Machine Learning</Heading>
-            </Box>
-            <Box
-              margin={{ right: "50px" }}
-              className="specialhover"
-              pad="small"
-              align="center"
-            >
-              <Database size="50px" />
-              <Heading size="20px">Databases</Heading>
-            </Box>
-            <Box
-              margin={{ right: "50px" }}
-              className="specialhover"
-              pad="small"
-              align="center"
-            >
-              <Reactjs size="50px" />
-              <Heading size="20px">Physics</Heading>
-            </Box>
-            <Box
-              margin={{ right: "50px" }}
-              className="specialhover"
-              pad="small"
-              align="center"
-            >
-              <Code size="50px" />
-              <Heading size="20px">CS at UC Berkeley ATDP</Heading>
-            </Box>
-            <Box
-              margin={{ right: "50px" }}
-              className="specialhover"
-              pad="small"
-              align="center"
-            >
-              <Add size="50px" />
-              <Heading size="20px">Calculus</Heading>
-            </Box>
-          </Box>
-        </Box>
-        <AdiFooter />
-      </Grommet>
-    </div>
+    <>
+      <section className="section">
+        <div className="container">
+          <div className="section-head">
+            <a className="text-link" href="/">
+              ← Home
+            </a>
+            <h1>About</h1>
+            <p className="section-subtitle">
+              I'm Adisesh (Adi), a Data Science student at UC Davis focused on
+              systems, ML, and full-stack engineering. I build clean, fast
+              products and research-driven systems with measurable impact.
+            </p>
+          </div>
+          <div className="hero-meta">
+            <span className="chip">Expected Graduation: Dec 2026</span>
+            <span className="chip">UC Davis</span>
+            <span className="chip">Bay Area</span>
+            <span className="chip">Software + ML + Systems</span>
+          </div>
+          <div className="hero-actions" style={{ marginTop: "20px" }}>
+            <a className="btn btn-primary" href="/projects">
+              View projects
+            </a>
+          </div>
+          <h2 className="section-title section-title-spaced">Experience</h2>
+          <div className="grid-3 reveal-stagger">
+            {highlights.map((item) => (
+              <div key={item.title} className="card">
+                <div className="icon-badge">{item.icon}</div>
+                <h3 className="card-title">{item.title}</h3>
+                <p className="card-body">{item.body}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+      <section className="section section-muted">
+        <div className="container">
+          <h2 className="section-title">Skills</h2>
+          <div className="stack">
+            {Object.entries(skills).map(([group, items]) => (
+              <div key={group} className="card card-dark">
+                <p className="card-eyebrow">{group}</p>
+                <div className="chip-row">
+                  {items.map((item) => {
+                    const isLink = typeof item === "object";
+                    const label = isLink ? item.label : item;
+                    return isLink ? (
+                      <a
+                        key={label}
+                        className="chip chip-dark chip-link"
+                        href={item.href}
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        {label}
+                      </a>
+                    ) : (
+                      <span key={label} className="chip chip-dark">
+                        {label}
+                      </span>
+                    );
+                  })}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+      <section className="section">
+        <div className="container">
+          <h2 className="section-title">Relevant Coursework</h2>
+          <div className="chip-row">
+            {coursework.map((course) => (
+              <span key={course.title} className="chip chip-icon">
+                <span className="chip-icon-mark">{course.icon}</span>
+                {course.title}
+              </span>
+            ))}
+          </div>
+        </div>
+      </section>
+      <AdiFooter />
+    </>
   );
 }
 

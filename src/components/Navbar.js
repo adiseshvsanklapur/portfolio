@@ -12,7 +12,7 @@ function Navbar() {
         </nav>
         <a
           className="btn btn-primary nav-cta"
-          href="https://drive.google.com/file/d/1CgGyaktWdks0AhLIrAz8l2sS0c02njjC/view?usp=sharing"
+          href="https://drive.google.com/file/d/12TAiSHYXAKCn-eqUX6ifpMz6wWweTlX-/view?usp=sharing"
           target="_blank"
           rel="noreferrer"
         >

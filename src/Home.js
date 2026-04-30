@@ -11,7 +11,7 @@ function Home() {
           </h1>
           <p className="hero-subtitle hero-subtitle-row hero-subtitle-tight reveal" style={{ "--delay": "120ms" }}>
             <span className="hero-degree">CS/DS @ UC Davis</span>
-            <span className="chip inline-chip">Expected Grad: Dec 2026</span>
+            <span className="chip inline-chip">Expected Grad: June 2027</span>
           </p>
           <div className="hero-actions hero-actions-spaced reveal" style={{ "--delay": "200ms" }}>
             <a className="btn btn-primary" href="/about">

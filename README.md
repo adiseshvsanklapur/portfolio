@@ -2,7 +2,7 @@
 
 # Adi.OS Portfolio
 
-Personal portfolio site — static HTML with React 18 (CDN) and in-browser JSX via Babel.
+Personal portfolio site: static HTML with React 18 (CDN) and in-browser JSX via Babel.
 
 ## Local development
 

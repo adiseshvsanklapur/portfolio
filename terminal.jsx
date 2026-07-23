@@ -61,7 +61,7 @@ function Terminal({ onClose, onEgg }) {
       "OS      : adiOS 2.7 (curiosity kernel, est. 2017)",
       "Host    : UC Davis · B.S. Data Science (CS)",
       "Uptime  : ICML 2026 · first-author publication",
-      "Engine  : C++ LOB — 6.5M orders/s @ 150ns",
+      "Engine  : C++ LOB — 23M msg/s, 6.1x vs std::map",
       "Awards  : Dean's List · HackDavis T3 · Cornell T5",
       "Music   : Chopin, Rachmaninoff (CM Level 10)",
       "Shell   : /bin/build-cool-things",

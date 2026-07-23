@@ -20,7 +20,7 @@ window.ADI = {
 
   stats: [
     { v: "ICML 2026", l: "First-author publication", k: "workshop paper" },
-    { v: "6.5M/s", l: "Orders matched", k: "150ns latency · C++" },
+    { v: "23M/s", l: "Messages matched", k: "6.1x vs std::map · C++" },
     { v: "Top 3", l: "HackDavis 2026", k: "of 600+ hackers" },
     { v: "500+", l: "Users shipped", k: "production apps" },
   ],
@@ -85,9 +85,9 @@ window.ADI = {
     {
       name: "Limit Order Book Engine",
       kind: "systems",
-      blurb: "C++ matching engine — constant-time matching across 10K+ price levels with a custom allocator.",
-      metrics: [["6.5M/s", "orders"], ["150ns", "latency"], ["O(1)", "match"]],
-      tags: ["C++20", "STL", "CMake"],
+      blurb: "C++20 price-time-priority matching engine — direct-indexed price ladder, bitmap best-price tracking, and a huge-page arena allocator, validated by differential fuzzing.",
+      metrics: [["23M/s", "msg"], ["6.1x", "vs std::map"], ["0", "divergences"]],
+      tags: ["C++20", "CMake", "HdrHistogram"],
       url: "https://github.com/adiseshvsanklapur",
       featured: true,
     },

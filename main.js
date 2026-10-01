@@ -436,7 +436,7 @@
     txt(svg, 150, 184, "round-robin", "d-label", "middle");
     [0, 1, 2, 3].forEach(function (i) {
       var y = 14 + i * 58;
-      el("path", { d: "M174 140 C 210 140, 220 " + (y + 22) + ", 250 " + (y + 22), class: "d-edge-hot d-flow", stroke: "var(--miss)" }, svg);
+      el("path", { d: "M174 140 C 210 140, 220 " + (y + 22) + ", 250 " + (y + 22), class: "d-edge-hot d-flow", style: "stroke: var(--miss)" }, svg);
       el("rect", { x: 250, y: y, width: 132, height: 44, rx: 8, class: "d-box" }, svg);
       txt(svg, 262, y + 17, "GPU-" + i, "d-label d-label-ink");
       el("rect", { x: 262, y: y + 25, width: 108, height: 8, rx: 3, fill: "url(#stripe)" }, svg);

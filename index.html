@@ -134,6 +134,7 @@
           <span>First author · ICML 2026</span><i>✦</i>
           <span>SWE Intern · Shopify</span><i>✦</i>
           <span>−43% p99 · C++20 router</span><i>✦</i>
+          <span>23M msg/s · C++ order book</span><i>✦</i>
           <span>Top 3 of 100+ · HackDavis ’26</span><i>✦</i>
           <span>Top 5 · Cornell Quant ’23</span><i>✦</i>
           <span>AWS Certified</span><i>✦</i>
@@ -143,6 +144,7 @@
           <span>First author · ICML 2026</span><i>✦</i>
           <span>SWE Intern · Shopify</span><i>✦</i>
           <span>−43% p99 · C++20 router</span><i>✦</i>
+          <span>23M msg/s · C++ order book</span><i>✦</i>
           <span>Top 3 of 100+ · HackDavis ’26</span><i>✦</i>
           <span>Top 5 · Cornell Quant ’23</span><i>✦</i>
           <span>AWS Certified</span><i>✦</i>
@@ -421,10 +423,68 @@
       <div class="wrap">
         <div class="sec-head reveal">
           <h2 class="sec-title">Projects<sup class="sec-idx mono">04</sup></h2>
-          <p class="sec-note">Graph algorithms, optimization, and everything before.</p>
+          <p class="sec-note">Low-latency engines, graph algorithms, and quant research.</p>
         </div>
 
         <article class="case reveal">
+          <div class="case-viz case-viz-lob">
+            <div class="lob" id="lob">
+              <div class="port-head mono">
+                <span><span class="live-dot"></span><span id="lob-title">Live order book</span></span>
+                <div class="seg" role="group" aria-label="Order book view">
+                  <button class="seg-b on" data-lob="live" aria-pressed="true">Live book</button>
+                  <button class="seg-b" data-lob="bench" aria-pressed="false">Benchmarks</button>
+                </div>
+              </div>
+
+              <div class="lob-pane" data-pane="live">
+                <div class="ladder" id="ladder" role="img" aria-label="Animated price ladder: asks above, bids below, sizes changing as simulated orders add, cancel, and trade."></div>
+                <div class="port-foot mono">
+                  <span>Last trade <b id="lob-last">—</b></span>
+                  <span>Messages <b id="lob-msgs">0</b></span>
+                  <span class="collapse-note">simulated flow</span>
+                </div>
+              </div>
+
+              <div class="lob-pane" data-pane="bench" hidden>
+                <p class="lob-k mono">Cancel latency as the book grows (ns, lower is better)</p>
+                <div class="lob-bench" role="img" aria-label="Cancel latency at 1K, 100K and 1M resting orders: ladder 20, 30, 53 nanoseconds; std::map 69, 141, 329 nanoseconds.">
+                  <div class="lb-row"><span class="lb-l mono">1K</span><div class="lb-bars"><i class="lb-a" style="--v:20" data-tip="1K orders · ladder 20 ns"></i><i class="lb-b" style="--v:69" data-tip="1K orders · std::map 69 ns"></i></div><span class="lb-v mono">20 / 69</span></div>
+                  <div class="lb-row"><span class="lb-l mono">100K</span><div class="lb-bars"><i class="lb-a" style="--v:30" data-tip="100K orders · ladder 30 ns"></i><i class="lb-b" style="--v:141" data-tip="100K orders · std::map 141 ns"></i></div><span class="lb-v mono">30 / 141</span></div>
+                  <div class="lb-row"><span class="lb-l mono">1M</span><div class="lb-bars"><i class="lb-a" style="--v:53" data-tip="1M orders · ladder 53 ns"></i><i class="lb-b" style="--v:329" data-tip="1M orders · std::map 329 ns"></i></div><span class="lb-v mono">53 / 329</span></div>
+                </div>
+                <table class="lob-table mono">
+                  <thead><tr><th>Operation</th><th>Engine</th><th>std::map</th><th>Speedup</th></tr></thead>
+                  <tbody>
+                    <tr><td>cancel</td><td>57 ns</td><td>350 ns</td><td><b>6.1×</b></td></tr>
+                    <tr><td>add (resting)</td><td>48 ns</td><td>67 ns</td><td><b>1.4×</b></td></tr>
+                    <tr><td>realistic mix</td><td>43 ns</td><td>59 ns</td><td><b>1.4×</b></td></tr>
+                  </tbody>
+                </table>
+                <div class="port-foot mono"><span><i class="sw sw-accent"></i> ladder &nbsp;<i class="sw sw-ink"></i> std::map</span><span>Apple M2 Max · -O3</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="case-body">
+            <div class="case-kicker mono">Quant · C++20 · Low latency</div>
+            <h3 class="case-title">Limit Order Book &amp; Matching Engine</h3>
+            <p class="case-lede">A price-time-priority matching engine in C++20, built around the operations that dominate real order flow: cancels and replaces.</p>
+            <div class="case-metrics">
+              <div><b>23M</b><span>msg/s, realistic mix</span></div>
+              <div><b>6.1×</b><span>faster cancel vs std::map</span></div>
+              <div><b>0</b><span>divergences, 30M fuzzed msgs</span></div>
+            </div>
+            <ul class="case-list">
+              <li>Direct-indexed price ladder with bitmap best-price tracking, intrusive FIFO queues, a flat open-addressed order-id map, and a huge-page arena allocator.</li>
+              <li>Differential fuzzing across 120 flow regimes (IOC, FOK, post-only, iceberg, self-trade prevention) with bit-for-bit agreement against an independent reference engine, plus raw Nasdaq ITCH 5.0 replay.</li>
+              <li>Latency measured coordinated-omission-free into HdrHistogram, p50 through p99.99.</li>
+            </ul>
+            <div class="chips"><span>C++20</span><span>CMake</span><span>HdrHistogram</span><span>Nasdaq ITCH</span><span>Fuzzing</span></div>
+            <a class="case-link" href="https://github.com/adiseshvsanklapur/High-Performance-LOB" target="_blank" rel="noopener">View on GitHub <span class="arrow">↗</span></a>
+          </div>
+        </article>
+
+        <article class="case case-flip reveal">
           <div class="case-viz case-viz-map">
             <svg viewBox="0 0 400 300" id="map-svg" aria-label="Interactive graph: click a street to block it and the accessible route recomputes with Dijkstra."></svg>
             <div class="map-hud mono">
@@ -451,7 +511,7 @@
           </div>
         </article>
 
-        <article class="case case-flip reveal">
+        <article class="case reveal">
           <div class="case-viz case-viz-port">
             <div class="port" id="port">
               <div class="port-head mono"><span><span class="live-dot"></span>Portfolio optimizer</span><span class="collapse-note">illustrative data</span></div>
@@ -632,6 +692,7 @@
       </dl>
       <ul class="tldr-list">
         <li><b>C++20 inference router for vLLM:</b> −43% p99 latency, 79% cache hit rate, zero divergence over 50K generations.</li>
+        <li><b>C++20 limit order book:</b> 23M msg/s, 6.1× faster cancels than std::map, 0 divergences over 30M fuzzed messages.</li>
         <li><b>ARMS Lab:</b> tolerance queries cut from multi-second LLM calls to sub-40 ms.</li>
         <li><b>Arcadia (robotics):</b> −40% navigation error with a C++ ROS Kalman fusion pipeline.</li>
         <li><b>Pinpoint:</b> shipped a real-time platform to 500+ students on Next.js, Supabase, PostgreSQL.</li>

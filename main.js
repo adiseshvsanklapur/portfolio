@@ -744,6 +744,90 @@
   })();
 
   /* ============================================================
+     Order book: live price ladder (simulated flow) + real benchmarks
+     ============================================================ */
+  (function orderBook() {
+    var ladder = $("#ladder");
+    if (!ladder) return;
+    var LEVELS = 7, TICK = 0.01, r = rng(5);
+    var bestBid = 101.24, bids = [], asks = [], msgs = 0, rows = [];
+    for (var i = 0; i < LEVELS; i++) { bids.push(40 + Math.round(r() * 160)); asks.push(40 + Math.round(r() * 160)); }
+    /* rows: asks from deepest to best, then the spread row, then bids from best to deepest */
+    for (var j = 0; j < LEVELS * 2; j++) {
+      var row = document.createElement("div");
+      row.className = "lv " + (j < LEVELS ? "ask" : "bid");
+      row.innerHTML = '<span class="lv-p"></span><span class="lv-bar"><i></i></span><span class="lv-s"></span>';
+      rows.push(row);
+      if (j === LEVELS) {
+        var sp = document.createElement("div"); sp.className = "lv-spread mono"; sp.id = "lob-spread";
+        ladder.appendChild(sp);
+      }
+      ladder.appendChild(row);
+    }
+    var lastEl = $("#lob-last"), msgEl = $("#lob-msgs"), spreadEl = $("#lob-spread");
+    function render(flash) {
+      var max = 1;
+      bids.concat(asks).forEach(function (v) { if (v > max) max = v; });
+      for (var i = 0; i < LEVELS; i++) {
+        var a = rows[LEVELS - 1 - i], b = rows[LEVELS + i];
+        a.firstChild.textContent = (bestBid + TICK * (i + 1)).toFixed(2);
+        a.lastChild.textContent = asks[i];
+        a.children[1].firstChild.style.width = (asks[i] / max) * 100 + "%";
+        b.firstChild.textContent = (bestBid - TICK * i).toFixed(2);
+        b.lastChild.textContent = bids[i];
+        b.children[1].firstChild.style.width = (bids[i] / max) * 100 + "%";
+      }
+      spreadEl.textContent = "spread " + TICK.toFixed(2) + " · mid " + (bestBid + TICK / 2).toFixed(3);
+      msgEl.textContent = msgs.toLocaleString();
+      if (flash) {
+        flash.classList.remove("hit"); void flash.offsetWidth; flash.classList.add("hit");
+      }
+    }
+    function lvl() { var x = r(); return Math.min(LEVELS - 1, Math.floor(x * x * LEVELS)); } // activity concentrates at the touch
+    function step() {
+      var flash = null;
+      for (var n = 0; n < 3; n++) {
+        msgs++;
+        var side = r() < 0.5 ? bids : asks, L = lvl(), e = r();
+        if (e < 0.55) side[L] = Math.max(1, side[L] - 1 - Math.floor(r() * side[L] * 0.35));     // cancel / replace down
+        else if (e < 0.9) side[L] += 5 + Math.floor(r() * 40);                                   // add
+        else {                                                                                    // marketable order trades the touch
+          var buy = side === asks, book = buy ? asks : bids, qty = 10 + Math.floor(r() * 60);
+          var px = buy ? bestBid + TICK : bestBid;
+          book[0] -= qty;
+          if (book[0] <= 0) {
+            book.shift(); book.push(40 + Math.floor(r() * 160));
+            var other = buy ? bids : asks;
+            other.unshift(5 + Math.floor(r() * 30)); other.pop();
+            bestBid += buy ? TICK : -TICK;
+          }
+          lastEl.textContent = (buy ? "BUY " : "SELL ") + qty + " @ " + px.toFixed(2);
+          lastEl.className = buy ? "buy" : "sell";
+          flash = rows[buy ? LEVELS - 1 : LEVELS];
+        }
+      }
+      render(flash);
+    }
+    render();
+    var timer = null;
+    function startBook() { if (!timer && !reduced) timer = setInterval(step, 140); }
+    function stopBook() { clearInterval(timer); timer = null; }
+    if (reduced) { for (var k = 0; k < 40; k++) step(); }
+    else whileVisible(ladder, startBook, stopBook);
+
+    /* tabs */
+    $$("[data-lob]").forEach(function (b) {
+      b.addEventListener("click", function () {
+        var v = b.dataset.lob;
+        $$("[data-lob]").forEach(function (o) { o.classList.toggle("on", o === b); o.setAttribute("aria-pressed", o === b ? "true" : "false"); });
+        $$(".lob-pane").forEach(function (p) { p.hidden = p.dataset.pane !== v; });
+        $("#lob-title").textContent = v === "live" ? "Live order book" : "Benchmarks";
+        if (v === "live") startBook(); else stopBook();
+      });
+    });
+  })();
+
+  /* ============================================================
      Cornell Quant: constrained portfolio optimizer (illustrative data)
      maximize Σ μᵢwᵢ  s.t.  Σwᵢ = 1,  0 ≤ wᵢ ≤ asset cap,  Σ_sector wᵢ ≤ sector cap.
      These caps are nested, so filling the highest-return assets first is the
@@ -807,6 +891,7 @@
       ["shopify", "Shopify", ["C++"]],
       ["icml", "ICML 2026 paper", ["LoRA/PEFT", "MLX", "Python"]],
       ["router", "Inference router", ["vLLM", "C++", "Docker", "Kubernetes"]],
+      ["lob", "Order book engine", ["C++"]],
       ["arms", "ARMS Lab", ["Python", "FastAPI", "SQL", "C#", "RAG"]],
       ["access", "AccessMap AI", ["Python", "FastAPI", "Next.js", "Supabase"]],
       ["quant", "Cornell Quant engine", ["Python", "Pandas"]],
@@ -1011,7 +1096,7 @@
     { g: "Go to", l: "Flagship: inference router", s: "C++20 · −43% p99", ic: "01", k: "project systems vllm", run: goTo("flagship") },
     { g: "Go to", l: "Experience", s: "Shopify, ARMS Lab, Arcadia…", ic: "02", k: "work jobs internship", run: goTo("experience") },
     { g: "Go to", l: "Research", s: "ICML 2026", ic: "03", k: "paper publication llm", run: goTo("research") },
-    { g: "Go to", l: "Projects", s: "AccessMap, Cornell Quant", ic: "04", k: "builds quant graph", run: goTo("projects") },
+    { g: "Go to", l: "Projects", s: "Order book, AccessMap, Cornell Quant", ic: "04", k: "builds quant graph lob c++", run: goTo("projects") },
     { g: "Go to", l: "Toolkit & education", s: "Skills, UC Davis", ic: "05", k: "skills languages education honors", run: goTo("toolkit") },
     { g: "Go to", l: "About", ic: "06", k: "bio piano", run: goTo("about") },
     { g: "Go to", l: "Contact", ic: "07", k: "email hire reach", run: goTo("contact") },
@@ -1022,6 +1107,7 @@
     { g: "Open", l: "LinkedIn", s: "adivsanklapur", ic: "↗", k: "profile", run: openUrl("https://www.linkedin.com/in/adivsanklapur/") },
     { g: "Open", l: "ICML 2026 paper", s: "PDF", ic: "↗", k: "research diversity synthetic data", run: openUrl("https://genaicreativity.org/icml2026/files/67/67_paper.pdf") },
     { g: "Open", l: "Inference router repo", s: "GitHub", ic: "↗", k: "vllm c++ project", run: openUrl("https://github.com/adiseshvsanklapur/cache-aware-inference-router") },
+    { g: "Open", l: "Order book engine repo", s: "GitHub", ic: "↗", k: "lob c++ quant matching", run: openUrl("https://github.com/adiseshvsanklapur/High-Performance-LOB") },
     { g: "Open", l: "AccessMap AI repo", s: "GitHub", ic: "↗", k: "hackdavis project map", run: openUrl("https://github.com/adiseshvsanklapur/AccessMapAI") },
   ];
   function render() {

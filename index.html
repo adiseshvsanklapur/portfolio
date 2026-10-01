@@ -3,30 +3,667 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Adi · CS + AI · UC Davis</title>
-  <meta name="description" content="Adisesh (Adi) Venkatesh Sanklapur — building intelligent systems across machine learning, high-performance computing, and software engineering." />
+  <title>Adisesh Sanklapur — Software Engineer & ML Researcher</title>
+  <meta name="description" content="Adisesh Venkatesh Sanklapur — CS at UC Davis (Dec 2027). Software Engineering Intern at Shopify, first author at ICML 2026, AI Systems Researcher at ARMS Lab. Systems, search, and LLM inference." />
+  <meta name="theme-color" content="#f3f1ec" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#0b0b0d" media="(prefers-color-scheme: dark)" />
+  <meta property="og:title" content="Adisesh Sanklapur — Software Engineer & ML Researcher" />
+  <meta property="og:description" content="SWE Intern at Shopify · First author, ICML 2026 · C++20 inference router: −43% p99 latency." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://adivsanklapur.netlify.app/" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,200..800&family=Geist:wght@300..700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
-  <link rel="stylesheet" href="components.css" />
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem("theme");
+        if (t === "light" || t === "dark") document.documentElement.dataset.theme = t;
+      } catch (e) {}
+    })();
+  </script>
 </head>
 <body>
-  <div id="root"></div>
+  <a class="skip" href="#main">Skip to content</a>
 
-  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
-  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
-  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+  <!-- ================================================================ NAV -->
+  <header class="nav" id="nav">
+    <a href="#top" class="mark" aria-label="Back to top">
+      <span class="mark-glyph">AS</span>
+      <span class="mark-name">Adisesh Sanklapur</span>
+    </a>
+    <nav class="nav-links" aria-label="Sections">
+      <a href="#flagship">Flagship</a>
+      <a href="#experience">Experience</a>
+      <a href="#research">Research</a>
+      <a href="#projects">Projects</a>
+      <a href="#toolkit">Toolkit</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="kbd-btn" id="open-palette" aria-label="Open command menu">
+        <span class="kbd-k">⌘K</span><span class="kbd-l">Menu</span>
+      </button>
+      <button class="icon-btn" id="theme-toggle" aria-label="Toggle color theme">
+        <svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        <svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg>
+      </button>
+      <button class="btn btn-ink tldr-open" data-tldr>
+        <span class="bolt" aria-hidden="true">⚡</span><span class="tldr-l">30-sec summary</span><span class="tldr-s">TL;DR</span>
+      </button>
+    </div>
+  </header>
 
-  <script src="data.js"></script>
-  <script type="text/babel" src="atoms.jsx"></script>
-  <script type="text/babel" src="cursor.jsx"></script>
-  <script type="text/babel" src="neural.jsx"></script>
-  <script type="text/babel" src="boot.jsx"></script>
-  <script type="text/babel" src="sections.jsx"></script>
-  <script type="text/babel" src="sections2.jsx"></script>
-  <script type="text/babel" src="terminal.jsx"></script>
-  <script type="text/babel" src="eggs.jsx"></script>
-  <script type="text/babel" src="app.jsx"></script>
+  <main id="main">
+    <!-- ================================================================ HERO -->
+    <section class="hero" id="top">
+      <div class="wrap">
+        <div class="hero-meta mono">
+          <span>Portfolio / 2026</span>
+          <span class="hide-sm">Davis, CA ↔ Bellevue, WA</span>
+          <span><span class="live-dot"></span>Pacific <time id="clock">--:--</time></span>
+        </div>
+
+        <div class="hero-title">
+          <h1 class="hero-name" id="hero-name" aria-label="Adisesh Sanklapur">
+            <span class="line"><span class="word" data-split>Adisesh</span></span>
+            <span class="line"><span class="word" data-split>Sanklapur</span><span class="hero-dot" aria-hidden="true">.</span></span>
+          </h1>
+          <a class="sticker" href="#flagship" aria-label="Jump to the flagship project">
+            <svg viewBox="0 0 120 120" aria-hidden="true">
+              <defs><path id="sticker-path" d="M60,60 m-45,0 a45,45 0 1,1 90,0 a45,45 0 1,1 -90,0" /></defs>
+              <text><textPath href="#sticker-path" textLength="279">SOFTWARE ENGINEER ✦ ML RESEARCHER ✦ SYSTEMS ✦ </textPath></text>
+            </svg>
+            <span class="sticker-core" aria-hidden="true">↓</span>
+          </a>
+        </div>
+
+        <div class="hero-bento">
+          <div class="hb-intro">
+            <p class="hero-lede">
+              I build systems where <mark>milliseconds</mark> matter: search infrastructure, LLM inference routing, and research on the models themselves.
+            </p>
+            <div class="hero-cta">
+              <a class="btn btn-accent" href="#flagship">See the flagship build <span aria-hidden="true">↓</span></a>
+              <button class="btn btn-line" data-tldr><span aria-hidden="true">⚡</span> 30-sec summary</button>
+              <a class="btn btn-line" href="#contact">Get in touch</a>
+            </div>
+          </div>
+
+          <a class="hb-tile hb-shop" href="#experience">
+            <span class="hb-k mono"><span class="live-dot"></span>Now</span>
+            <span class="hb-big">Shopify</span>
+            <span class="hb-s">Software Engineering Intern · search index serving</span>
+          </a>
+          <a class="hb-tile hb-icml" href="#research">
+            <span class="hb-k mono">Published</span>
+            <span class="hb-big">ICML 2026</span>
+            <span class="hb-s">First author · output diversity in LLMs</span>
+          </a>
+          <div class="hb-tile hb-edu">
+            <span class="hb-k mono">Education</span>
+            <span class="hb-big">UC Davis</span>
+            <span class="hb-s">B.S. Computer Science · Dec 2027</span>
+          </div>
+
+          <figure class="sim hb-sim" id="sim" aria-label="Interactive simulation of a cache-aware inference router">
+            <div class="sim-head mono">
+              <span><span class="live-dot"></span>live<span class="hide-sm"> · inference router</span></span>
+              <div class="seg" role="group" aria-label="Routing policy">
+                <button class="seg-b on" data-policy="aware" aria-pressed="true">Cache-aware</button>
+                <button class="seg-b" data-policy="rr" aria-pressed="false">Round-robin</button>
+              </div>
+            </div>
+            <canvas id="sim-canvas" role="img" aria-label="Requests flowing through a router to four GPU replicas. With cache-aware routing, requests go to the replica that already holds their prompt prefix."></canvas>
+            <div class="sim-stats mono">
+              <div><span class="k">cache hit rate</span><span class="v" id="s-hit">—</span></div>
+              <div class="spark-cell"><span class="k">hit rate over time</span><svg id="spark" viewBox="0 0 200 40" preserveAspectRatio="none" aria-hidden="true"></svg></div>
+              <div><span class="k">routed</span><span class="v" id="s-routed">0</span></div>
+            </div>
+            <figcaption class="mono">Toggle the policy and watch the hit rate. Each color is a prompt prefix; filled squares are KV caches on each GPU. A simplified model of <a href="#flagship">my C++20 router</a>.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================ TICKER -->
+    <div class="ticker" aria-label="Highlights">
+      <div class="ticker-track">
+        <div class="ticker-set">
+          <span>First author · ICML 2026</span><i>✦</i>
+          <span>SWE Intern · Shopify</span><i>✦</i>
+          <span>−43% p99 · C++20 router</span><i>✦</i>
+          <span>Top 3 of 100+ · HackDavis ’26</span><i>✦</i>
+          <span>Top 5 · Cornell Quant ’23</span><i>✦</i>
+          <span>AWS Certified</span><i>✦</i>
+          <span>Dean’s List</span><i>✦</i>
+        </div>
+        <div class="ticker-set" aria-hidden="true">
+          <span>First author · ICML 2026</span><i>✦</i>
+          <span>SWE Intern · Shopify</span><i>✦</i>
+          <span>−43% p99 · C++20 router</span><i>✦</i>
+          <span>Top 3 of 100+ · HackDavis ’26</span><i>✦</i>
+          <span>Top 5 · Cornell Quant ’23</span><i>✦</i>
+          <span>AWS Certified</span><i>✦</i>
+          <span>Dean’s List</span><i>✦</i>
+        </div>
+      </div>
+    </div>
+
+    <!-- ================================================================ IMPACT -->
+    <section class="bento wrap" id="impact" aria-label="Selected results">
+      <article class="b-card b-wide reveal">
+        <div class="b-k mono"><span>Inference router</span><span>p99 latency</span></div>
+        <div class="b-num">−<span data-count="43">43</span>%</div>
+        <p class="b-l">lower p99 latency from routing repeat prompts to the replica that already holds their KV cache.</p>
+        <div class="bars" role="img" aria-label="p99 latency indexed to 100 before; 57 after cache-aware routing">
+          <div class="bar-row"><span class="bar-l">Before</span><div class="bar-track"><div class="bar" style="--v:100" data-tip="Before · p99 indexed to 100"></div></div><span class="bar-v mono">100</span></div>
+          <div class="bar-row"><span class="bar-l">Cache-aware</span><div class="bar-track"><div class="bar bar-accent" style="--v:57" data-tip="Cache-aware · 57 (−43% p99)"></div></div><span class="bar-v mono">57</span></div>
+        </div>
+        <p class="b-foot mono">p99 latency, indexed · before = 100</p>
+      </article>
+
+      <article class="b-card reveal">
+        <div class="b-k mono"><span>ARMS Lab</span><span>Query latency</span></div>
+        <div class="b-num">&lt;<span data-count="40">40</span><small>ms</small></div>
+        <p class="b-l">tolerance lookups, down from multi-second LLM calls.</p>
+        <div class="logscale" role="img" aria-label="Log scale from 10 milliseconds to 10 seconds. The SQL path answers in under 40 milliseconds; the old LLM call took multiple seconds.">
+          <div class="ls-band" data-tip="Old path · LLM call, multi-second"><span class="mono">LLM call</span></div>
+          <div class="ls-mark" style="--x:20.1" data-tip="New path · SQL-backed, &lt;40 ms"><span class="mono">SQL path</span></div>
+          <div class="ls-axis mono"><span>10ms</span><span>100ms</span><span>1s</span><span>10s</span></div>
+        </div>
+        <p class="b-foot mono">log scale</p>
+      </article>
+
+      <article class="b-card reveal">
+        <div class="b-k mono"><span>Arcadia</span><span>Robot fleet</span></div>
+        <div class="b-num">−<span data-count="40">40</span>%</div>
+        <p class="b-l">navigation error, and −25% drift, from C++ Kalman IMU/odometry fusion.</p>
+        <div class="bars bars-pairs" role="img" aria-label="Indexed to 100 before: navigation error 60 after, drift 75 after">
+          <div class="bar-row"><span class="bar-l">Nav error</span><div class="bar-track"><div class="bar" style="--v:100" data-tip="Nav error · before = 100"></div><div class="bar bar-accent" style="--v:60" data-tip="Nav error · after = 60 (−40%)"></div></div><span class="bar-v mono">60</span></div>
+          <div class="bar-row"><span class="bar-l">Drift</span><div class="bar-track"><div class="bar" style="--v:100" data-tip="Drift · before = 100"></div><div class="bar bar-accent" style="--v:75" data-tip="Drift · after = 75 (−25%)"></div></div><span class="bar-v mono">75</span></div>
+        </div>
+        <p class="b-foot mono"><i class="sw sw-ink"></i>before <i class="sw sw-accent"></i>after · indexed</p>
+      </article>
+
+      <article class="b-card b-wide reveal">
+        <div class="b-k mono"><span>Pinpoint</span><span>Real users</span></div>
+        <div class="b-num"><span data-count="500">500</span>+</div>
+        <p class="b-l">UC Davis students on a real-time lost-and-found platform I shipped.</p>
+        <div class="waffle" data-n="500" role="img" aria-label="500 dots, one per student"></div>
+        <p class="b-foot mono">one dot = one student</p>
+      </article>
+    </section>
+
+    <!-- ================================================================ FLAGSHIP (scrollytelling) -->
+    <section class="section" id="flagship">
+      <div class="wrap">
+        <div class="sec-head reveal">
+          <h2 class="sec-title">Flagship<sup class="sec-idx mono">01</sup></h2>
+          <p class="sec-note">Cache-Aware Inference Router for vLLM Fleets. Scroll through how it works.</p>
+        </div>
+
+        <div class="story">
+          <div class="story-stage" id="stage" data-step="0">
+            <div class="stage-frame">
+              <div class="stage-top mono">
+                <span>router.cpp · C++20</span>
+                <span class="stage-steps"><i></i><i></i><i></i><i></i></span>
+              </div>
+
+              <div class="panel" data-panel="0">
+                <svg viewBox="0 0 400 280" id="p-problem" aria-label="Round-robin routing sends four requests with the same prefix to four different GPUs, so each GPU recomputes the same prefix."></svg>
+              </div>
+              <div class="panel" data-panel="1">
+                <svg viewBox="0 0 400 300" id="trie-svg" aria-label="A prefix tree maps each prompt prefix to the GPU that already caches it."></svg>
+              </div>
+              <div class="panel" data-panel="2">
+                <div class="res">
+                  <div class="res-donut">
+                    <svg viewBox="0 0 120 120" aria-label="Fleet cache hit rate 79%">
+                      <circle cx="60" cy="60" r="48" class="donut-track" />
+                      <circle cx="60" cy="60" r="48" class="donut-val" pathLength="100" style="--v:79" />
+                    </svg>
+                    <div class="res-donut-l"><b>79%</b><span class="mono">cache hit rate</span></div>
+                  </div>
+                  <div class="res-side">
+                    <div class="bars">
+                      <div class="bar-row"><span class="bar-l">p99 before</span><div class="bar-track"><div class="bar" style="--v:100" data-tip="p99 before · indexed 100"></div></div><span class="bar-v mono">100</span></div>
+                      <div class="bar-row"><span class="bar-l">p99 after</span><div class="bar-track"><div class="bar bar-accent" style="--v:57" data-tip="p99 after · 57 (−43%)"></div></div><span class="bar-v mono">57</span></div>
+                    </div>
+                    <div class="res-stats">
+                      <div><b>−43%</b><span class="mono">p99 latency</span></div>
+                      <div><b>&lt;0.9 ms</b><span class="mono">routing cost</span></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="panel" data-panel="3">
+                <div class="verify">
+                  <div class="verify-head"><b>50,000 / 50,000</b><span class="mono">generations token-identical</span></div>
+                  <div class="waffle waffle-verify" data-n="500" role="img" aria-label="500 cells, each 100 generations, all verified identical"></div>
+                  <div class="verify-timeline mono">
+                    <span>load test</span>
+                    <span class="vt-fail">⚡ replica failure injected</span>
+                    <span>0 divergence</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="story-steps">
+            <div class="step" data-step="0">
+              <span class="step-n mono">01 · The problem</span>
+              <h3>Round-robin wastes the GPU’s memory.</h3>
+              <p>LLM serving engines like vLLM cache the attention state (the KV cache) for prompts they have already seen. A load balancer that ignores this spreads repeat prompts across every replica, so each one recomputes the same prefix from scratch.</p>
+            </div>
+            <div class="step" data-step="1">
+              <span class="step-n mono">02 · The idea</span>
+              <h3>Route by prefix, on the hot path.</h3>
+              <p>I wrote a C++20 router that keeps a prefix tree of which replica holds which prompt prefix, and pins each request to the replica that already has its KV cache. Matching costs <b>under 0.9 ms per request</b>, behind an OpenAI-compatible API.</p>
+            </div>
+            <div class="step" data-step="2">
+              <span class="step-n mono">03 · The result</span>
+              <h3>−43% p99 latency. 79% cache hits.</h3>
+              <p>Tail latency drops because repeat prompts skip recomputation. The fleet-wide cache hit rate rose to <b>79%</b>, and <b>p99 latency fell 43%</b>.</p>
+            </div>
+            <div class="step" data-step="3">
+              <span class="step-n mono">04 · The proof</span>
+              <h3>Faster, and provably the same output.</h3>
+              <p>A router must never change what the model says. I checked <b>50K generations token-for-token</b> against direct-to-engine output, under load and with an injected replica failure. <b>Zero divergence.</b></p>
+              <div class="chips"><span>C++20</span><span>vLLM</span><span>OpenAI-compatible API</span><span>Docker</span><span>Kubernetes</span></div>
+              <a class="case-link" href="https://github.com/adiseshvsanklapur/cache-aware-inference-router" target="_blank" rel="noopener">Read the code on GitHub <span class="arrow">↗</span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================ EXPERIENCE -->
+    <section class="section" id="experience">
+      <div class="wrap">
+        <div class="sec-head reveal">
+          <h2 class="sec-title">Experience<sup class="sec-idx mono">02</sup></h2>
+          <p class="sec-note">Production search, applied AI in manufacturing, robotics, and a campus platform.</p>
+        </div>
+
+        <div class="gantt reveal" id="gantt" role="img" aria-label="Timeline of roles: ASDRP Jan 2022 to Jan 2023, Arcadia Jan 2023 to Nov 2023, Pinpoint Sep 2024 to Jun 2025, ARMS Lab Mar 2026 to now, Shopify Sep 2026 to now"></div>
+
+        <ol class="xp">
+          <li class="xp-row reveal is-current">
+            <div class="xp-when mono"><span>Sep 2026 — Now</span><span>Bellevue, WA</span></div>
+            <div class="xp-head">
+              <h3 class="xp-org">Shopify <span class="badge mono"><span class="live-dot"></span>current</span></h3>
+              <p class="xp-role">Software Engineering Intern</p>
+            </div>
+            <div class="xp-body">
+              <p>Index serving for Shopify search: the low-latency layer every query passes through.</p>
+              <div class="chips"><span>Search</span><span>Index Serving</span><span>Low Latency</span></div>
+            </div>
+          </li>
+
+          <li class="xp-row reveal is-current">
+            <div class="xp-when mono"><span>Mar 2026 — Now</span><span>Davis, CA</span></div>
+            <div class="xp-head">
+              <h3 class="xp-org">ARMS Laboratory, UC Davis <span class="badge mono"><span class="live-dot"></span>current</span></h3>
+              <p class="xp-role">AI Systems Researcher</p>
+              <p class="xp-ctx">Industry collaboration with a major CNC machine-tool manufacturer</p>
+            </div>
+            <div class="xp-body">
+              <ul>
+                <li>Cut tolerance-query latency from multi-second LLM calls to <b>sub-40 ms</b> by moving lookups onto a SQL-backed service path.</li>
+                <li>Built a Python FastAPI backend that maps SolidWorks part features to tolerance limits, replacing manual lookups in engineering standards.</li>
+                <li>Removed the CAD workstation dependency with a C# COM integration, and prototyped a RAG layer that cites its sources over the ANSI/ISO corpus.</li>
+              </ul>
+              <div class="chips"><span>Python</span><span>FastAPI</span><span>SQL</span><span>C#</span><span>SolidWorks</span><span>RAG</span></div>
+            </div>
+          </li>
+
+          <li class="xp-row reveal">
+            <div class="xp-when mono"><span>Sep 2024 — Jun 2025</span><span>Davis, CA</span></div>
+            <div class="xp-head">
+              <h3 class="xp-org"><a href="https://codelabdavis.medium.com/pinpoint-ea9b86303e2e" target="_blank" rel="noopener">Pinpoint, Codelab Davis <span class="arrow">↗</span></a></h3>
+              <p class="xp-role">Software Developer</p>
+            </div>
+            <div class="xp-body">
+              <ul>
+                <li>Shipped a real-time lost-and-found platform to <b>500+ UC Davis students</b> on Next.js and Supabase, with live WebSocket match updates.</li>
+                <li>Added tag-based fuzzy matching over a PostgreSQL full-text index, so students see likely matches instantly across 1K+ listings.</li>
+                <li>Secured per-user data and blocked bot signups by pairing PostgreSQL row-level security with Google OAuth.</li>
+              </ul>
+              <div class="chips"><span>Next.js</span><span>Supabase</span><span>PostgreSQL</span><span>WebSockets</span><span>OAuth</span></div>
+            </div>
+          </li>
+
+          <li class="xp-row reveal">
+            <div class="xp-when mono"><span>Jan 2023 — Nov 2023</span><span>Pleasanton, CA</span></div>
+            <div class="xp-head">
+              <h3 class="xp-org">Arcadia</h3>
+              <p class="xp-role">Software Engineering Intern</p>
+              <p class="xp-ctx">Venture-backed robotics startup · $2M raised · $3M+ pre-orders</p>
+            </div>
+            <div class="xp-body">
+              <ul>
+                <li>Cut fleet <b>navigation error 40%</b> and drift 25% across $3M+ in pre-orders with a C++ ROS Kalman IMU/odometry fusion pipeline.</li>
+                <li>Built a ROS replay harness over 100+ hours of field logs to catch navigation regressions before over-the-air fleet updates.</li>
+                <li>Reached <b>90% defect-classification accuracy</b> in variable lighting with an OpenCV pipeline that drives an Arduino servo to eject bad parts.</li>
+              </ul>
+              <div class="chips"><span>C++</span><span>ROS</span><span>Kalman Filtering</span><span>OpenCV</span><span>Arduino</span></div>
+              <figure class="demo reveal" id="kalman-demo">
+                <div class="demo-head mono"><span><span class="live-dot"></span>Live · Kalman filter</span><span class="demo-legend"><i class="k-truth"></i>truth <i class="k-meas"></i>noisy sensor <i class="k-est"></i>estimate</span></div>
+                <canvas id="kalman" role="img" aria-label="Animated plot: a Kalman filter tracks a moving target from noisy sensor readings; the estimate stays close to the true path."></canvas>
+                <figcaption class="mono">A constant-velocity Kalman filter on synthetic data: the same idea that fused IMU and odometry on Arcadia’s robots. Error now: <b id="k-err">—</b> vs raw sensor <b id="k-raw">—</b></figcaption>
+              </figure>
+            </div>
+          </li>
+
+          <li class="xp-row reveal">
+            <div class="xp-when mono"><span>Jan 2022 — Jan 2023</span><span>Fremont, CA</span></div>
+            <div class="xp-head">
+              <h3 class="xp-org">Aspiring Scholars Directed Research Program</h3>
+              <p class="xp-role">Data Science Research Intern</p>
+            </div>
+            <div class="xp-body">
+              <ul>
+                <li>Raised <b>cluster purity 35%</b> over baseline by training Kohonen self-organizing maps across swept grid geometries and decay schedules.</li>
+                <li>Reduced dimensionality on a 20K+ sample dataset while preserving topology, and benchmarked the SOM projections against PCA and t-SNE.</li>
+              </ul>
+              <div class="chips"><span>Python</span><span>Self-Organizing Maps</span><span>PCA</span><span>t-SNE</span></div>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ================================================================ RESEARCH -->
+    <section class="section research" id="research">
+      <div class="wrap">
+        <div class="sec-head reveal">
+          <h2 class="sec-title">Research<sup class="sec-idx mono">03</sup></h2>
+          <p class="sec-note">Does diversity survive when one language model teaches another?</p>
+        </div>
+
+        <article class="paper reveal">
+          <div class="paper-main">
+            <div class="paper-venue mono"><span class="badge badge-accent mono">ICML 2026</span><span>First author</span></div>
+            <h3 class="paper-title">On the Transfer of Output Diversity via Synthetic Data in Language Models</h3>
+            <p class="paper-abs">
+              I fine-tuned Llama 3.2 with LoRA in MLX to test whether a teacher model’s output diversity carries over to a student trained on its synthetic data. I built automated noun-probe and creativity evaluation harnesses and ran them across 1,250 generations to measure how much diversity each pipeline kept.
+            </p>
+            <div class="paper-links">
+              <a class="btn btn-ink" href="https://genaicreativity.org/icml2026/files/67/67_paper.pdf" target="_blank" rel="noopener">Read the paper ↗</a>
+              <a class="btn btn-line" href="https://genaicreativity.org/icml2026/files/67/67_poster.pdf" target="_blank" rel="noopener">Poster ↗</a>
+            </div>
+            <div class="chips"><span>LoRA / PEFT</span><span>MLX</span><span>Llama 3.2</span><span>Synthetic Data</span><span>Evaluation</span></div>
+          </div>
+
+          <div class="paper-side">
+            <div class="collapse">
+              <div class="collapse-top mono"><span>Drag: tuning strength</span><span class="collapse-note">illustration</span></div>
+              <svg viewBox="0 0 320 180" id="collapse-svg" aria-label="Illustration: as tuning strength increases, varied outputs collapse into a few repeated ones."></svg>
+              <input type="range" id="tune" min="0" max="100" value="15" aria-label="Tuning strength" />
+              <div class="collapse-labels mono"><span>light tuning</span><span id="tune-read">varied outputs</span><span>heavy tuning</span></div>
+            </div>
+            <dl class="findings">
+              <div><dt class="mono">Kept under light tuning</dt><dd>29–39<small>%</small></dd><div class="mini" data-tip="29–39% of diversity gains kept"><i style="left:29%;width:10%"></i></div><p>of the diversity gains survived distillation</p></div>
+              <div><dt class="mono">Heavy tuning</dt><dd>68.4<small>%</small></dd><div class="mini" data-tip="68.4% top-5 repetition"><i style="left:0;width:68.4%"></i></div><p>top-5 repetition after outputs collapsed</p></div>
+              <div><dt class="mono">Evaluated</dt><dd>1,250</dd><p>generations across the eval harnesses</p></div>
+            </dl>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ================================================================ PROJECTS -->
+    <section class="section" id="projects">
+      <div class="wrap">
+        <div class="sec-head reveal">
+          <h2 class="sec-title">Projects<sup class="sec-idx mono">04</sup></h2>
+          <p class="sec-note">Graph algorithms, optimization, and everything before.</p>
+        </div>
+
+        <article class="case reveal">
+          <div class="case-viz case-viz-map">
+            <svg viewBox="0 0 400 300" id="map-svg" aria-label="Interactive graph: click a street to block it and the accessible route recomputes with Dijkstra."></svg>
+            <div class="map-hud mono">
+              <span id="map-status">route: —</span>
+              <button id="map-reset" class="map-reset">reset</button>
+            </div>
+            <span class="case-viz-tag mono">Click a street to block it · Dijkstra reroutes</span>
+          </div>
+          <div class="case-body">
+            <div class="case-kicker mono">Graphs · HackDavis ’26 <span class="award">★ Top 3 of 100+ teams</span></div>
+            <h3 class="case-title">AccessMap AI</h3>
+            <p class="case-lede">A wheelchair-accessible route planner over a 19.7K-node graph that combines footpaths, transit, and elevation, then explains each route in plain language.</p>
+            <div class="case-metrics">
+              <div><b>19.7K</b><span>graph nodes</span></div>
+              <div><b>&lt;300ms</b><span>per route query</span></div>
+              <div><b>Top 3</b><span>of 100+ teams</span></div>
+            </div>
+            <ul class="case-list">
+              <li>Dijkstra over a graph that fuses footpaths, transit, and elevation. Routes are served through a FastAPI backend and a Mapbox GL frontend.</li>
+              <li>Uses Gemini 2.5 Flash to score accessibility and explain routes. Invited to the UC Davis Startup Center EIR program.</li>
+            </ul>
+            <div class="chips"><span>Python</span><span>NetworkX</span><span>Next.js</span><span>Supabase</span><span>Mapbox GL</span><span>Gemini API</span></div>
+            <a class="case-link" href="https://github.com/adiseshvsanklapur/AccessMapAI" target="_blank" rel="noopener">View on GitHub <span class="arrow">↗</span></a>
+          </div>
+        </article>
+
+        <article class="case case-flip reveal">
+          <div class="case-viz case-viz-port">
+            <div class="port" id="port">
+              <div class="port-head mono"><span><span class="live-dot"></span>Portfolio optimizer</span><span class="collapse-note">illustrative data</span></div>
+              <div class="port-ctrl">
+                <label class="mono"><span>Max per asset <b id="cap-v">25%</b></span><input type="range" id="cap" min="15" max="50" value="25" /></label>
+                <label class="mono"><span>Max per sector <b id="sec-v">45%</b></span><input type="range" id="sec" min="25" max="100" value="45" /></label>
+              </div>
+              <div class="port-bars" id="port-bars" role="img" aria-label="Optimal portfolio weights for eight assets under the chosen caps"></div>
+              <div class="port-foot mono">
+                <span>Expected return <b id="port-ret">—</b></span>
+                <span class="port-legend" id="port-legend"></span>
+              </div>
+            </div>
+          </div>
+          <div class="case-body">
+            <div class="case-kicker mono">Quant · Cornell Quant ’23 <span class="award">★ Top 5</span></div>
+            <h3 class="case-title">Constraint Optimization Engine</h3>
+            <p class="case-lede">A backtesting and linear-programming platform for systematic equities, built to reduce overfitting and speed up strategy evaluation. Drag the caps and the optimizer re-solves for the best allocation that still respects every limit.</p>
+            <ul class="case-list">
+              <li>Linear-programming layer in PuLP that turns strategy constraints into a solvable optimization problem.</li>
+              <li>Backtesting harness in Pandas for fast, repeatable strategy evaluation.</li>
+            </ul>
+            <div class="chips"><span>Python</span><span>PuLP</span><span>Pandas</span><span>Linear Programming</span></div>
+            <a class="case-link" href="https://github.com/adiseshvsanklapur/CQF-SystematicEquities" target="_blank" rel="noopener">View on GitHub <span class="arrow">↗</span></a>
+          </div>
+        </article>
+
+        <div class="archive reveal">
+          <div class="archive-head">
+            <h3 class="archive-title">Archive</h3>
+            <span class="mono">earlier builds</span>
+          </div>
+          <ul class="archive-list">
+            <li><a href="https://github.com/adiseshvsanklapur/financial-agents" target="_blank" rel="noopener">
+              <span class="a-name">Agentic Stock Insight</span>
+              <span class="a-desc">Multi-agent research system running LLaMA on Groq, orchestrated with Phidata.</span>
+              <span class="a-stack mono">Python · LLaMA · Groq</span><span class="arrow">↗</span></a></li>
+            <li><a href="https://github.com/adiseshvsanklapur/ai-slides-generator" target="_blank" rel="noopener">
+              <span class="a-name">AI Slides Creator</span>
+              <span class="a-desc">GPT-4o pipeline that turns documents into slide decks, with Ollama for offline inference.</span>
+              <span class="a-stack mono">FastAPI · Streamlit · GPT-4o</span><span class="arrow">↗</span></a></li>
+            <li><a href="https://carto-campus.vercel.app" target="_blank" rel="noopener">
+              <span class="a-name">Carto-Campus</span>
+              <span class="a-desc">Campus navigation app used by 100+ students.</span>
+              <span class="a-stack mono">React · Node.js · Firebase</span><span class="arrow">↗</span></a></li>
+            <li><a href="https://github.com/adiseshvsanklapur/FakeNewsDetector" target="_blank" rel="noopener">
+              <span class="a-name">Fake News Detector</span>
+              <span class="a-desc">TF-IDF + scikit-learn classifier with a full text-preprocessing pipeline. <em>HackDavis ’24</em></span>
+              <span class="a-stack mono">Python · scikit-learn · NLP</span><span class="arrow">↗</span></a></li>
+            <li><a href="https://github.com/adiseshvsanklapur/PhotoEditor" target="_blank" rel="noopener">
+              <span class="a-name">Photo Editor</span>
+              <span class="a-desc">Desktop image editor with edge detection, convolution filters, and painting tools.</span>
+              <span class="a-stack mono">Java · Swing</span><span class="arrow">↗</span></a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================ TOOLKIT -->
+    <section class="section" id="toolkit">
+      <div class="wrap">
+        <div class="sec-head reveal">
+          <h2 class="sec-title">Toolkit<sup class="sec-idx mono">05</sup></h2>
+          <p class="sec-note">What I reach for, and where I’ve used it.</p>
+        </div>
+
+        <div class="graph reveal" id="graph">
+          <div class="graph-head">
+            <h3 class="graph-title">Where each tool shows up</h3>
+            <span class="mono graph-hint">Hover or tap a project or a tool</span>
+          </div>
+          <div class="graph-body" id="graph-body">
+            <ul class="g-col g-left" id="g-left" aria-label="Projects and roles"></ul>
+            <svg class="g-links" id="g-links" aria-hidden="true"></svg>
+            <ul class="g-col g-right" id="g-right" aria-label="Tools"></ul>
+          </div>
+        </div>
+
+        <div class="kit">
+          <div class="kit-col reveal">
+            <h3 class="kit-h mono"><span>A</span>Languages</h3>
+            <p>Python, SQL, C/C++ (C++17/20), Java, TypeScript, JavaScript, C#, Go, R, Bash/Shell, MATLAB, Ruby</p>
+          </div>
+          <div class="kit-col reveal">
+            <h3 class="kit-h mono"><span>B</span>AI &amp; Machine Learning</h3>
+            <p>PyTorch, Hugging Face, Transformers, LoRA/PEFT, MLX, RAG, LangChain, SBERT, vLLM, OpenCV, Time-Series</p>
+          </div>
+          <div class="kit-col reveal">
+            <h3 class="kit-h mono"><span>C</span>Frameworks &amp; Libraries</h3>
+            <p>Flask, FastAPI, REST APIs, Node.js, Next.js, React, Apache Kafka, NumPy, Pandas, scikit-learn, XGBoost, ROS</p>
+          </div>
+          <div class="kit-col reveal">
+            <h3 class="kit-h mono"><span>D</span>Cloud, Systems &amp; Tools</h3>
+            <p>Docker, Kubernetes, AWS, GCP, PostgreSQL, Supabase, MongoDB, Redis, ChromaDB, Git, CI/CD, Linux/Unix</p>
+          </div>
+        </div>
+
+        <div class="edu reveal">
+          <div class="edu-main">
+            <span class="mono edu-k">Education</span>
+            <h3 class="edu-school">University of California, Davis</h3>
+            <p class="edu-deg">B.S. in Computer Science <span class="mono">· Exp. Dec 2027</span></p>
+            <p class="edu-course"><span class="mono">Coursework</span> Data Structures &amp; Algorithms, Computer Architecture, Databases, Linear Algebra, Probability &amp; Statistics</p>
+          </div>
+          <ul class="honors">
+            <li><span class="h-v">ICML 2026</span><span class="h-l">First-author publication</span></li>
+            <li><span class="h-v">Top 3</span><span class="h-l">of 100+ teams, HackDavis ’26</span></li>
+            <li><span class="h-v">Top 5</span><span class="h-l">Cornell Quant ’23</span></li>
+            <li><span class="h-v">AWS</span><span class="h-l">Certified</span></li>
+            <li><span class="h-v">Dean’s List</span><span class="h-l">UC Davis</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================ ABOUT -->
+    <section class="section about" id="about">
+      <div class="wrap about-grid">
+        <div class="sec-head reveal">
+          <h2 class="sec-title">About<sup class="sec-idx mono">06</sup></h2>
+        </div>
+        <div class="about-copy reveal">
+          <p class="about-lead">I started writing code at eleven. Now I spend my time where <mark>theory meets the metal</mark>: training language models, taking latency out of hot paths, and shipping software people actually use.</p>
+          <p>I study Computer Science at UC Davis. My work so far spans robotics sensor fusion, a campus platform with hundreds of users, applied AI for manufacturing, and production search. What ties it together is that I like measuring things, and I like it most when the numbers move in the right direction.</p>
+          <p>Away from the keyboard I play classical piano (Certificate of Merit, Level 10), mostly Chopin and Rachmaninoff. Try the keys.</p>
+        </div>
+        <div class="piano-card reveal" id="piano">
+          <div class="piano-head mono">
+            <span>nocturne.wav</span>
+            <button class="piano-play" id="piano-play">▶ Play a phrase</button>
+          </div>
+          <div class="piano-keys" id="piano-keys"></div>
+          <div class="piano-foot mono">Click the keys, or use A–K on your keyboard</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================ CONTACT -->
+    <section class="contact" id="contact">
+      <div class="wrap">
+        <p class="mono contact-k">07 — Contact</p>
+        <h2 class="contact-title">Let’s build<br />something <span class="outline">fast.</span></h2>
+        <div class="contact-row">
+          <button class="email-btn" id="copy-email" data-email="adivenkatesh@ucdavis.edu">
+            <span class="email-text">adivenkatesh@ucdavis.edu</span>
+            <span class="email-hint mono">copy</span>
+          </button>
+        </div>
+        <ul class="contact-links">
+          <li><a href="https://github.com/adiseshvsanklapur" target="_blank" rel="noopener"><span class="mono">01</span>GitHub<span class="arrow">↗</span></a></li>
+          <li><a href="https://www.linkedin.com/in/adivsanklapur/" target="_blank" rel="noopener"><span class="mono">02</span>LinkedIn<span class="arrow">↗</span></a></li>
+          <li><a href="tel:9254759477"><span class="mono">03</span>925-475-9477<span class="arrow">↗</span></a></li>
+        </ul>
+        <footer class="footer mono">
+          <span>© 2026 Adisesh Venkatesh Sanklapur</span>
+          <span>Designed &amp; built by hand, no frameworks</span>
+          <span>Press <kbd>⌘K</kbd> anywhere</span>
+        </footer>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================================================================ 30-SECOND SUMMARY -->
+  <div class="tldr" id="tldr" hidden>
+    <div class="tldr-scrim" data-close></div>
+    <div class="tldr-card" role="dialog" aria-modal="true" aria-labelledby="tldr-name">
+      <div class="tldr-top mono">
+        <span>⚡ 30-second summary</span>
+        <button class="tldr-x" data-close aria-label="Close summary">esc ✕</button>
+      </div>
+      <div class="tldr-id">
+        <h2 id="tldr-name">Adisesh Venkatesh Sanklapur</h2>
+        <p>B.S. Computer Science, UC Davis · Exp. Dec 2027</p>
+      </div>
+      <dl class="tldr-facts">
+        <div><dt class="mono">Now</dt><dd>Software Engineering Intern, <b>Shopify</b> (search index serving)</dd></div>
+        <div><dt class="mono">Research</dt><dd>First author, <b>ICML 2026</b> · AI Systems Researcher, <b>ARMS Lab</b></dd></div>
+      </dl>
+      <ul class="tldr-list">
+        <li><b>C++20 inference router for vLLM:</b> −43% p99 latency, 79% cache hit rate, zero divergence over 50K generations.</li>
+        <li><b>ARMS Lab:</b> tolerance queries cut from multi-second LLM calls to sub-40 ms.</li>
+        <li><b>Arcadia (robotics):</b> −40% navigation error with a C++ ROS Kalman fusion pipeline.</li>
+        <li><b>Pinpoint:</b> shipped a real-time platform to 500+ students on Next.js, Supabase, PostgreSQL.</li>
+        <li><b>Honors:</b> Top 3 of 100+ at HackDavis ’26 · Top 5 Cornell Quant ’23 · AWS Certified · Dean’s List.</li>
+      </ul>
+      <p class="tldr-stack"><span class="mono">Core stack</span> C++17/20 · Python · SQL · TypeScript · PyTorch · vLLM · Docker · Kubernetes · PostgreSQL</p>
+      <div class="tldr-actions">
+        <button class="btn btn-accent" id="tldr-copy">Copy summary</button>
+        <button class="btn btn-line" id="tldr-email">Copy email</button>
+        <a class="btn btn-line" href="https://github.com/adiseshvsanklapur" target="_blank" rel="noopener">GitHub ↗</a>
+        <a class="btn btn-line" href="https://www.linkedin.com/in/adivsanklapur/" target="_blank" rel="noopener">LinkedIn ↗</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================================================================ COMMAND PALETTE -->
+  <div class="palette" id="palette" hidden>
+    <div class="palette-scrim" data-close></div>
+    <div class="palette-box" role="dialog" aria-modal="true" aria-label="Command menu">
+      <div class="palette-input-row">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        <input id="palette-input" type="text" placeholder="Jump to a section, copy email, play piano…" autocomplete="off" spellcheck="false" aria-controls="palette-list" />
+        <kbd>esc</kbd>
+      </div>
+      <ul class="palette-list" id="palette-list" role="listbox"></ul>
+      <div class="palette-foot mono"><span>↑↓ navigate</span><span>↵ select</span></div>
+    </div>
+  </div>
+
+  <div class="toast mono" id="toast" role="status" aria-live="polite"></div>
+  <div class="tip mono" id="tip" aria-hidden="true"></div>
+
+  <script src="main.js" defer></script>
 </body>
 </html>
